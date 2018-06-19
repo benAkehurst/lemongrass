@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+  <div class="main-buttons-container float-left">
+    <span class="navbar-brand header-link main-link" (click)="goToHomeLink()">Antique Adventures</span>
+  </div>
+  <div class="fill-remaining-space"></div>
+  <div class="login-register-div float-right">
+    <span class="nav-item navbar-brand profile-link" *ngIf="loggedIn">Hi {{name}}, welcome back.</span>
+    <span class="nav-item header-link" *ngIf="loggedIn" (click)="logout()">Log Out</span>
+    <span class="nav-item header-link navbar-brand login-link" (click)="goToLoginLink()" *ngIf="!loggedIn">Login</span>
+    <span class="nav-item header-link navbar-brand register-link" (click)="goToRegisterLink()" *ngIf="!loggedIn">Register</span>
+  </div>
+</mat-toolbar>

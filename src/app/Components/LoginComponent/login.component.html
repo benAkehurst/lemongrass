@@ -1,0 +1,15 @@
+<app-header></app-header>
+<div class="login">
+  <h2 class="login-header">Log in</h2>
+  <form class="login-container">
+    <p>
+      <input type="email" placeholder="Email" required autofocus [(ngModel)]="dataService.User.email" [ngModelOptions]="{standalone: true}">
+    </p>
+    <p>
+      <input type="password" placeholder="Password" required [(ngModel)]="dataService.User.password" [ngModelOptions]="{standalone: true}">
+    </p>
+    <p>
+      <input type="submit" value="Log in" (click)="loginUser()">
+    </p>
+  </form>
+</div>
