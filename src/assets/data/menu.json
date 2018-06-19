@@ -1,575 +1,558 @@
 {
-    "menu":{
-        "popular":[
-            {
-                "name": "Green Chicken Curry",
-                "price": 6.95,
-                "description": "Green curry in coconut milk with chicken & sliced bamboo shoots" ,
-                "vegetarian": false,
-                "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fgreen_curry.jpg?alt=media&token=9779dbbc-4f09-401c-9bff-8fb9869dd2e8"
+  "popular": [{
+      "name": "Green Chicken Curry",
+      "price": 6.95,
+      "description": "Green curry in coconut milk with chicken & sliced bamboo shoots",
+      "vegetarian": false,
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fgreen_curry.jpg?alt=media&token=9779dbbc-4f09-401c-9bff-8fb9869dd2e8"
 
-            },
-            {
-                "name": "Red Chicken Curry",
-                "price": 6.95,
-                "description": "Red curry in coconut milk with chicken & sliced bamboo shoots" ,
-                "vegetarian": false,
-                "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fred_curry.jpg?alt=media&token=446977c4-d978-4d75-93a5-6ba1b641b851"
+    },
+    {
+      "name": "Red Chicken Curry",
+      "price": 6.95,
+      "description": "Red curry in coconut milk with chicken & sliced bamboo shoots",
+      "vegetarian": false,
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fred_curry.jpg?alt=media&token=446977c4-d978-4d75-93a5-6ba1b641b851"
 
-            },
-            {
-                "name": "Vegetable Curry",
-                "price": 5.95,
-                "description": "Vegetables & bean curd with a choice of either red or green curry sauce" ,
-                "vegetarian": true,
-                "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fveg_curry.jpg?alt=media&token=3cefe808-c860-4d7f-bdaa-820c74faa20b"
+    },
+    {
+      "name": "Vegetable Curry",
+      "price": 5.95,
+      "description": "Vegetables & bean curd with a choice of either red or green curry sauce",
+      "vegetarian": true,
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fveg_curry.jpg?alt=media&token=3cefe808-c860-4d7f-bdaa-820c74faa20b"
 
-            },
-            {
-                "name": "Pad Thai (Thai Noodles)",
-                "price": 6.95,
-                "description": "Stir fried rice noodles with chicken, bean sprouts & egg" ,
-                "vegetarian": false,
-                "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fchicken_pad_thai.jpg?alt=media&token=e92b9d07-62b9-4f07-8414-0ab59450c009"
+    },
+    {
+      "name": "Pad Thai (Thai Noodles)",
+      "price": 6.95,
+      "description": "Stir fried rice noodles with chicken, bean sprouts & egg",
+      "vegetarian": false,
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fchicken_pad_thai.jpg?alt=media&token=e92b9d07-62b9-4f07-8414-0ab59450c009"
 
-            },
-            {
-                "name": "Vegetarian Pad Thai",
-                "price": 5.95,
-                "description": "Stir fried rice noodles with bean curd, bean sprouts, peanuts & egg" ,
-                "vegetarian": true,
-                "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fchicken_pad_thai.jpg?alt=media&token=e92b9d07-62b9-4f07-8414-0ab59450c009"
-            }
-        ],
-        "starters":[
-            {
-                "name": "Prawn Crackers - Large",
-                "price": 2.95,
-                "description": "" ,
-                "vegetarian": false,
-                "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fprawn_crackers.jpg?alt=media&token=24a530b4-84b9-4abc-ab75-0c40c7cea826"
-
-            },
-            {
-                "name": "Prawn Crackers - Small",
-                "price": 1.95,
-                "description": "" ,
-                "vegetarian": false,
-                "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fprawn_crackers.jpg?alt=media&token=24a530b4-84b9-4abc-ab75-0c40c7cea826"
-
-            },
-            {
-                "name": "Spring Rolls",
-                "price": 3.95,
-                "description": "Deep fried pastry wrapper with vegetables & vermicelli" ,
-                "vegetarian": true,
-                "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fspring_rolls.jpg?alt=media&token=e34f6673-2da8-4854-bccd-0b5527eb1718"
-
-            },
-            {
-                "name": "Satay",
-                "price": 4.95,
-                "description": "A barbecued marinated chicken" ,
-                "vegetarian": false,
-                "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fsatay.jpg?alt=media&token=01049d1b-1b28-47de-9e65-dc63e667e628"
-
-            },
-            {
-                "name": "Dim Sum",
-                "price": 4.45,
-                "description": "Steamed dumping in a wonton wrapper with minced chicken & prawns" ,
-                "vegetarian": false,
-                "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fdim_sum.jpg?alt=media&token=51b34d7f-cd77-49f1-92ee-572b378656dd"
-
-            },
-            {
-                "name": "Crispy Wonton",
-                "price": 4.45,
-                "description": "" ,
-                "vegetarian": false,
-                "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fwonton.jpg?alt=media&token=361802b4-125f-456a-ae76-27bfae499ec5"
-
-            },
-            {
-                "name": "Chicken Wings in Salt & Pepper",
-                "price": 4.45,
-                "description": "" ,
-                "vegetarian": false,
-                "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fchicken_wings.jpg?alt=media&token=91b95abf-4f50-464c-8242-2b743cde4982"
-
-            },
-            {
-                "name": "Fish Cake",
-                "price": 4.95,
-                "description": "Fish fillets & prawns, mixed with mild curry paste & deep fried" ,
-                "vegetarian": false,
-                "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Ffish_cake.jpg?alt=media&token=c137cf1b-cfaa-468c-9182-1851a72f685d"
-
-            },
-            {
-                "name": "Prawn Tempura",
-                "price": 5.45,
-                "description": "Deep fried prawns in batter & breadcrumbs" ,
-                "vegetarian": false,
-                "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Ftempura.jpg?alt=media&token=d284abc1-3cdb-4140-b0fa-6471935dec60"
-
-            },
-            {
-                "name": "Vegetable Tempura",
-                "price": 4.95,
-                "description": "Deep fried mixed vegetables in batter" ,
-                "vegetarian": true,
-                "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Ftempura.jpg?alt=media&token=d284abc1-3cdb-4140-b0fa-6471935dec60"
-
-            },
-            {
-                "name": "Thai Garden Platter",
-                "price": 12.95,
-                "description": "For 2 persons. Consists of spring rolls, satay, prawns on toast, chicken wings, crispy wonton & vegetable tempura" ,
-                "vegetarian": false,
-                "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fplatter.jpg?alt=media&token=a141de5e-5465-4c77-beef-adfbdeb6f5cd"
-
-            },
-            {
-                "name": "Chips",
-                "price": 2.50,
-                "description": "" ,
-                "vegetarian": true,
-                "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fchips.jpg?alt=media&token=0d570801-333e-4811-8ffa-724a87ce92be"
-
-            }
-        ],
-        "mains": {
-            "thai_curries": [
-                {
-                    "name": "Green Chicken Curry",
-                    "price": 6.95,
-                    "description": "Green curry in coconut milk with chicken & sliced bamboo shoots" ,
-                    "vegetarian": false,
-                    "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fgreen_curry.jpg?alt=media&token=9779dbbc-4f09-401c-9bff-8fb9869dd2e8"
-    
-                },
-                {
-                    "name": "Green Prawn Curry",
-                    "price": 8.25,
-                    "description": "Green curry in coconut milk with prawns & sliced bamboo shoots" ,
-                    "vegetarian": false,
-                    "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fgreen_curry.jpg?alt=media&token=9779dbbc-4f09-401c-9bff-8fb9869dd2e8"
-    
-                },
-                {
-                    "name": "Red Chicken Curry",
-                    "price": 6.95,
-                    "description": "Red curry in coconut milk with chicken & sliced bamboo shoots" ,
-                    "vegetarian": false,
-                    "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fred_curry.jpg?alt=media&token=446977c4-d978-4d75-93a5-6ba1b641b851"
-    
-                },
-                {
-                    "name": "Duck Panang",
-                    "price": 8.45,
-                    "description": "A mild curry paste duck" ,
-                    "vegetarian": false,
-                    "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fduck_panang.jpeg?alt=media&token=60e27b9b-f95d-4c56-ba5b-a5e3c6165904"
-    
-                },
-                {
-                    "name": "Chicken Mad Sa Man",
-                    "price": 6.95,
-                    "description": "A mild curry paste with chicken, potato & peanut" ,
-                    "vegetarian": false,
-                    "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fmad_sa_man.jpg?alt=media&token=00bc7156-437f-4a22-9358-a8c91410054b"
-    
-                }
-            ],
-            "chicken_dishes": [
-                {
-                    "name": "Chicken Cashew Nut",
-                    "price": 6.95,
-                    "description": "Stir fried chicken with cashew nuts" ,
-                    "vegetarian": false,
-                    "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fcashew_chicken.jpg?alt=media&token=a0c342b8-2a5c-4246-9924-db93dca917f9"
-    
-                },
-                {
-                    "name": "Chicken Chilli",
-                    "price": 6.95,
-                    "description": "Stir fried chicken with fresh chilli & onion" ,
-                    "vegetarian": false,
-                    "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fchilli_chicken.jpg?alt=media&token=cee29084-e6c5-4b25-ab21-79203023edd3"
-    
-                },
-                {
-                    "name": "Chicken Ginger Sauce",
-                    "price": 6.95,
-                    "description": "Stir fried chicken with ginger, onion & mushrooms" ,
-                    "vegetarian": false,
-                    "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fginger_chicken.jpg?alt=media&token=dc077742-1009-4bb2-a984-5630f68eb393"
-    
-                },
-                {
-                    "name": "Chicken Garlic",
-                    "price": 6.95,
-                    "description": "Stir fried chicken with garlic, pepper & mushroom" ,
-                    "vegetarian": false,
-                    "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fgarlic_chicken.jpeg?alt=media&token=9e2d3ade-7e1d-4f4c-bcbe-37008cd19301"
-    
-                },
-                {
-                    "name": "Sweet & Sour Chicken",
-                    "price": 6.95,
-                    "description": "Stir fried chicken in a sweet & sour sauce with tomato, cucumber, onion & pineapple" ,
-                    "vegetarian": false,
-                    "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fsweet_sour_chicken.jpeg?alt=media&token=7a4b5b0e-624c-45ee-8eea-ecc029e2e9b4"
-    
-                }
-            ],
-            "vegetable_dishes": [
-                {
-                    "name": "Vegetable in Oyster Sauce",
-                    "price": 5.45,
-                    "description": "Stir fried mixed vegetables in an oyster sauce" ,
-                    "vegetarian": true,
-                    "imgUrl": ""
-    
-                },
-                {
-                    "name": "Vegetables in Sweet & Sour Sauce",
-                    "price": 5.45,
-                    "description": "Stir fried mixed vegetables in sweet & sour sauce" ,
-                    "vegetarian": true,
-                    "imgUrl": ""
-    
-                },
-                {
-                    "name": "Bean curd Ginger",
-                    "price": 5.45,
-                    "description": "Stir fried bean curd with onion & ginger" ,
-                    "vegetarian": true,
-                    "imgUrl": ""
-    
-                },
-                {
-                    "name": "Baby corn & Mushroom",
-                    "price": 5.45,
-                    "description": "Stir fried baby corn & mushrooms in oyster sauce" ,
-                    "vegetarian": true,
-                    "imgUrl": ""
-    
-                },
-                {
-                    "name": "Bean Curd Cashew Nut",
-                    "price": 5.45,
-                    "description": "Stir fried bean curd with cashew nuts" ,
-                    "vegetarian": true,
-                    "imgUrl": ""
-    
-                }
-            ],
-            "noodle_dishes": [
-                {
-                    "name": "Chicken Pad Thai (Thai Noodles)",
-                    "price": 6.95,
-                    "description": "Stir fried rice noodles with chicken, bean sprouts & egg" ,
-                    "vegetarian": false,
-                    "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fpad_thai.jpeg?alt=media&token=68cb5c0d-bf2c-483b-a7ce-67adb469e356"
-                },
-                {
-                    "name": "Prawn Pad Thai (Thai Noodles)",
-                    "price": 7.95,
-                    "description": "Stir fried rice noodles with prawn, bean sprouts & egg" ,
-                    "vegetarian": false,
-                    "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fpad_thai.jpeg?alt=media&token=68cb5c0d-bf2c-483b-a7ce-67adb469e356"
-    
-                },
-                {
-                    "name": "Vegetarian Pad Thai (Thai Noodles)",
-                    "price": 5.95,
-                    "description": "Stir fried rice noodles with vegetables, bean sprouts & egg" ,
-                    "vegetarian": true,
-                    "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fpad_thai.jpeg?alt=media&token=68cb5c0d-bf2c-483b-a7ce-67adb469e356"
-                },
-                {
-                    "name": "Chicken Pad Si-lew",
-                    "price": 6.95,
-                    "description": "Stir fried rice noodle with chicken, green vegetables & egg" ,
-                    "vegetarian": false,
-                    "imgUrl": ""
-    
-                },
-                {
-                    "name": "Prawn Pad Si-lew",
-                    "price": 7.95,
-                    "description": "Stir fried rice noodle with prawns, green vegetables & egg" ,
-                    "vegetarian": false,
-                    "imgUrl": ""
-    
-                }
-            ],
-            "rice_dishes": [
-                {
-                    "name": "Special Fried Rice",
-                    "price": 6.95,
-                    "description": "Fried rice with chicken, prawn & vegetables" ,
-                    "vegetarian": false,
-                    "imgUrl": ""
-    
-                },
-                {
-                    "name": "Spicy Fried Rice with Chicken & Green Curry Paste",
-                    "price": 6.95,
-                    "description": "Fried rice with vegetables, bamboo shoot & basil with chicken" ,
-                    "vegetarian": false,
-                    "imgUrl": ""
-    
-                },
-                {
-                    "name": "Chicken Spicy Thai Rice",
-                    "price": 6.95,
-                    "description": "Fried rice with chicken, chilli & vegetables" ,
-                    "vegetarian": false,
-                    "imgUrl": ""
-    
-                },
-                {
-                    "name": "Vegetable Fried Rice",
-                    "price": 4.95,
-                    "description": "Fried rice with vegetables & egg" ,
-                    "vegetarian": true,
-                    "imgUrl": ""
-    
-                },
-                {
-                    "name": "Singapore Beef Fried Rice",
-                    "price": 7.25,
-                    "description": "" ,
-                    "vegetarian": false,
-                    "imgUrl": ""
-    
-                }
-            ]
-        },
-        "sides": [
-            {
-                "name": "Steamed Rice",
-                "price": 2.60,
-                "description": "" ,
-                "vegetarian": false,
-                "imgUrl": ""
-
-            },
-            {
-                "name": "Egg Fried Rice",
-                "price": 2.95,
-                "description": "" ,
-                "vegetarian": false,
-                "imgUrl": ""
-
-            },
-            {
-                "name": "Coconut Rice",
-                "price": 2.95,
-                "description": "" ,
-                "vegetarian": false,
-                "imgUrl": ""
-
-            },
-            {
-                "name": "Sticky Rice",
-                "price": 2.95,
-                "description": "" ,
-                "vegetarian": false,
-                "imgUrl": ""
-
-            }
-        ],
-        "soups":[
-            {
-                "name": "Tom Yum Kai",
-                "price": 4.95,
-                "description": "Hot & sour soup with chicken & mushrooms" ,
-                "vegetarian": false,
-                "imgUrl": ""
-
-            },
-            {
-                "name": "Tom Yum Kung",
-                "price": 5.45,
-                "description": "Hot & sour soup with prawns & mushrooms" ,
-                "vegetarian": false,
-                "imgUrl": ""
-
-            },
-            {
-                "name": "Tom Yum Hed",
-                "price": 4.50,
-                "description": "Hot & sour soup with mushrooms" ,
-                "vegetarian": true,
-                "imgUrl": ""
-
-            },
-            {
-                "name": "Poh Teak",
-                "price": 6.95,
-                "description": "Hot & sour soup with mixed seafood" ,
-                "vegetarian": false,
-                "imgUrl": ""
-
-            },
-            {
-                "name": "Tom Kha Kai",
-                "price": 4.95,
-                "description": "Creamy coconut soup with chicken & mushrooms" ,
-                "vegetarian": false,
-                "imgUrl": ""
-
-            },
-        ],
-        "setMeals":[
-            {
-                "name": "Thai Set Meal A for 2 People",
-                "price": 38.95,
-                "description": "Starter: \n - Thai garden platter (consists of: spring roll, satay, prawn on toast, chicken wing & crispy wonton) \n Main Course: \n - Green chicken curry \n - Lamb ginger \n - Vegetable with oyster \n - Pad Thai (Thai noodle) \n - 2 steamed rice",
-                "vegetarian": false,
-                "imgUrl": ""
-
-            },
-            {
-                "name": "Thai Set Meal B for 2 People",
-                "price": 43.95,
-                "description": "Starter: \n - Thai garden platter (consists of: spring roll, stay, prawn on toast, chicken wing & crispy wonton) \n Soup: \n - 2 Tom yum kai (Hot & sour soup with chicken) \n Main Course: \n - Green chicken curry \n - Lamb ginger \n - Vegetable with oyster \n - Pad Thai (Thai noodle) \n - 2 steamed rice" ,
-                "vegetarian": false,
-                "imgUrl": ""
-
-            }
-        ],
-        "sauces": [
-            {
-                "name": "Sweet & Sour",
-                "price": 0.35,
-                "description": "" ,
-                "vegetarian": false,
-                "imgUrl": ""
-
-            },
-            {
-                "name": "Sweet Chilli",
-                "price": 0.35,
-                "description": "" ,
-                "vegetarian": false,
-                "imgUrl": ""
-
-            },
-            {
-                "name": "Black Bean",
-                "price": 0.35,
-                "description": "" ,
-                "vegetarian": false,
-                "imgUrl": ""
-
-            }
-        ],
-        "deserts": [
-            {
-                "name": "Chocolate Häagen Dazs Ice Cream",
-                "price": 4.95,
-                "description": "" ,
-                "vegetarian": false,
-                "imgUrl": ""
-
-            },
-            {
-                "name": "Vanilla Häagen Dazs Ice Cream",
-                "price": 4.95,
-                "description": "" ,
-                "vegetarian": false,
-                "imgUrl": ""
-
-            },
-            {
-                "name": "Cookies & Cream Häagen Dazs Ice Cream",
-                "price": 4.95,
-                "description": "" ,
-                "vegetarian": false,
-                "imgUrl": ""
-
-            },
-            {
-                "name": "Chocolate Fudge Cake",
-                "price": 3.50,
-                "description": "" ,
-                "vegetarian": false,
-                "imgUrl": ""
-
-            },
-            {
-                "name": "Strawberry Cheesecake",
-                "price": 3.50,
-                "description": "" ,
-                "vegetarian": false,
-                "imgUrl": ""
-
-            }
-        ],
-        "drinks": [
-            {
-                "name": "Coca-Cola",
-                "price": 0.90,
-                "description": "0.33L" ,
-                "vegetarian": false,
-                "imgUrl": ""
-
-            },
-            {
-                "name": "Diet Coca-Cola",
-                "price": 0.90,
-                "description": "0.33L" ,
-                "vegetarian": false,
-                "imgUrl": ""
-
-            },
-            {
-                "name": "Fanta",
-                "price": 0.90,
-                "description": "0.33L" ,
-                "vegetarian": false,
-                "imgUrl": ""
-
-            },
-            {
-                "name": "7UP",
-                "price": 0.90,
-                "description": "0.33L" ,
-                "vegetarian": false,
-                "imgUrl": ""
-
-            },
-            {
-                "name": "Mineral Water",
-                "price": 1.50,
-                "description": "1.5L" ,
-                "vegetarian": false,
-                "imgUrl": ""
-
-            },
-            {
-                "name": "Sparkling Water",
-                "price": 3.50,
-                "description": "1.5L" ,
-                "vegetarian": false,
-                "imgUrl": ""
-
-            }
-        ],
-        "alcohol": [
-            {
-                "name": "Singha Beer",
-                "price": 3.95,
-                "description": "335ml" ,
-                "vegetarian": false,
-                "imgUrl": ""
-
-            }
-        ]
+    },
+    {
+      "name": "Vegetarian Pad Thai",
+      "price": 5.95,
+      "description": "Stir fried rice noodles with bean curd, bean sprouts, peanuts & egg",
+      "vegetarian": true,
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fchicken_pad_thai.jpg?alt=media&token=e92b9d07-62b9-4f07-8414-0ab59450c009"
     }
+  ],
+  "starters": [{
+      "name": "Prawn Crackers - Large",
+      "price": 2.95,
+      "description": "",
+      "vegetarian": false,
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fprawn_crackers.jpg?alt=media&token=24a530b4-84b9-4abc-ab75-0c40c7cea826"
+
+    },
+    {
+      "name": "Prawn Crackers - Small",
+      "price": 1.95,
+      "description": "",
+      "vegetarian": false,
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fprawn_crackers.jpg?alt=media&token=24a530b4-84b9-4abc-ab75-0c40c7cea826"
+
+    },
+    {
+      "name": "Spring Rolls",
+      "price": 3.95,
+      "description": "Deep fried pastry wrapper with vegetables & vermicelli",
+      "vegetarian": true,
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fspring_rolls.jpg?alt=media&token=e34f6673-2da8-4854-bccd-0b5527eb1718"
+
+    },
+    {
+      "name": "Satay",
+      "price": 4.95,
+      "description": "A barbecued marinated chicken",
+      "vegetarian": false,
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fsatay.jpg?alt=media&token=01049d1b-1b28-47de-9e65-dc63e667e628"
+
+    },
+    {
+      "name": "Dim Sum",
+      "price": 4.45,
+      "description": "Steamed dumping in a wonton wrapper with minced chicken & prawns",
+      "vegetarian": false,
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fdim_sum.jpg?alt=media&token=51b34d7f-cd77-49f1-92ee-572b378656dd"
+
+    },
+    {
+      "name": "Crispy Wonton",
+      "price": 4.45,
+      "description": "",
+      "vegetarian": false,
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fwonton.jpg?alt=media&token=361802b4-125f-456a-ae76-27bfae499ec5"
+
+    },
+    {
+      "name": "Chicken Wings in Salt & Pepper",
+      "price": 4.45,
+      "description": "",
+      "vegetarian": false,
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fchicken_wings.jpg?alt=media&token=91b95abf-4f50-464c-8242-2b743cde4982"
+
+    },
+    {
+      "name": "Fish Cake",
+      "price": 4.95,
+      "description": "Fish fillets & prawns, mixed with mild curry paste & deep fried",
+      "vegetarian": false,
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Ffish_cake.jpg?alt=media&token=c137cf1b-cfaa-468c-9182-1851a72f685d"
+
+    },
+    {
+      "name": "Prawn Tempura",
+      "price": 5.45,
+      "description": "Deep fried prawns in batter & breadcrumbs",
+      "vegetarian": false,
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Ftempura.jpg?alt=media&token=d284abc1-3cdb-4140-b0fa-6471935dec60"
+
+    },
+    {
+      "name": "Vegetable Tempura",
+      "price": 4.95,
+      "description": "Deep fried mixed vegetables in batter",
+      "vegetarian": true,
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Ftempura.jpg?alt=media&token=d284abc1-3cdb-4140-b0fa-6471935dec60"
+
+    },
+    {
+      "name": "Thai Garden Platter",
+      "price": 12.95,
+      "description": "For 2 persons. Consists of spring rolls, satay, prawns on toast, chicken wings, crispy wonton & vegetable tempura",
+      "vegetarian": false,
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fplatter.jpg?alt=media&token=a141de5e-5465-4c77-beef-adfbdeb6f5cd"
+
+    },
+    {
+      "name": "Chips",
+      "price": 2.50,
+      "description": "",
+      "vegetarian": true,
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fchips.jpg?alt=media&token=0d570801-333e-4811-8ffa-724a87ce92be"
+
+    }
+  ],
+  "mains": {
+    "thai_curries": [{
+        "name": "Green Chicken Curry",
+        "price": 6.95,
+        "description": "Green curry in coconut milk with chicken & sliced bamboo shoots",
+        "vegetarian": false,
+        "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fgreen_curry.jpg?alt=media&token=9779dbbc-4f09-401c-9bff-8fb9869dd2e8"
+
+      },
+      {
+        "name": "Green Prawn Curry",
+        "price": 8.25,
+        "description": "Green curry in coconut milk with prawns & sliced bamboo shoots",
+        "vegetarian": false,
+        "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fgreen_curry.jpg?alt=media&token=9779dbbc-4f09-401c-9bff-8fb9869dd2e8"
+
+      },
+      {
+        "name": "Red Chicken Curry",
+        "price": 6.95,
+        "description": "Red curry in coconut milk with chicken & sliced bamboo shoots",
+        "vegetarian": false,
+        "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fred_curry.jpg?alt=media&token=446977c4-d978-4d75-93a5-6ba1b641b851"
+
+      },
+      {
+        "name": "Duck Panang",
+        "price": 8.45,
+        "description": "A mild curry paste duck",
+        "vegetarian": false,
+        "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fduck_panang.jpeg?alt=media&token=60e27b9b-f95d-4c56-ba5b-a5e3c6165904"
+
+      },
+      {
+        "name": "Chicken Mad Sa Man",
+        "price": 6.95,
+        "description": "A mild curry paste with chicken, potato & peanut",
+        "vegetarian": false,
+        "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fmad_sa_man.jpg?alt=media&token=00bc7156-437f-4a22-9358-a8c91410054b"
+
+      }
+    ],
+    "chicken_dishes": [{
+        "name": "Chicken Cashew Nut",
+        "price": 6.95,
+        "description": "Stir fried chicken with cashew nuts",
+        "vegetarian": false,
+        "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fcashew_chicken.jpg?alt=media&token=a0c342b8-2a5c-4246-9924-db93dca917f9"
+
+      },
+      {
+        "name": "Chicken Chilli",
+        "price": 6.95,
+        "description": "Stir fried chicken with fresh chilli & onion",
+        "vegetarian": false,
+        "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fchilli_chicken.jpg?alt=media&token=cee29084-e6c5-4b25-ab21-79203023edd3"
+
+      },
+      {
+        "name": "Chicken Ginger Sauce",
+        "price": 6.95,
+        "description": "Stir fried chicken with ginger, onion & mushrooms",
+        "vegetarian": false,
+        "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fginger_chicken.jpg?alt=media&token=dc077742-1009-4bb2-a984-5630f68eb393"
+
+      },
+      {
+        "name": "Chicken Garlic",
+        "price": 6.95,
+        "description": "Stir fried chicken with garlic, pepper & mushroom",
+        "vegetarian": false,
+        "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fgarlic_chicken.jpeg?alt=media&token=9e2d3ade-7e1d-4f4c-bcbe-37008cd19301"
+
+      },
+      {
+        "name": "Sweet & Sour Chicken",
+        "price": 6.95,
+        "description": "Stir fried chicken in a sweet & sour sauce with tomato, cucumber, onion & pineapple",
+        "vegetarian": false,
+        "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fsweet_sour_chicken.jpeg?alt=media&token=7a4b5b0e-624c-45ee-8eea-ecc029e2e9b4"
+
+      }
+    ],
+    "vegetable_dishes": [{
+        "name": "Vegetable in Oyster Sauce",
+        "price": 5.45,
+        "description": "Stir fried mixed vegetables in an oyster sauce",
+        "vegetarian": true,
+        "imgUrl": ""
+
+      },
+      {
+        "name": "Vegetables in Sweet & Sour Sauce",
+        "price": 5.45,
+        "description": "Stir fried mixed vegetables in sweet & sour sauce",
+        "vegetarian": true,
+        "imgUrl": ""
+
+      },
+      {
+        "name": "Bean curd Ginger",
+        "price": 5.45,
+        "description": "Stir fried bean curd with onion & ginger",
+        "vegetarian": true,
+        "imgUrl": ""
+
+      },
+      {
+        "name": "Baby corn & Mushroom",
+        "price": 5.45,
+        "description": "Stir fried baby corn & mushrooms in oyster sauce",
+        "vegetarian": true,
+        "imgUrl": ""
+
+      },
+      {
+        "name": "Bean Curd Cashew Nut",
+        "price": 5.45,
+        "description": "Stir fried bean curd with cashew nuts",
+        "vegetarian": true,
+        "imgUrl": ""
+
+      }
+    ],
+    "noodle_dishes": [{
+        "name": "Chicken Pad Thai (Thai Noodles)",
+        "price": 6.95,
+        "description": "Stir fried rice noodles with chicken, bean sprouts & egg",
+        "vegetarian": false,
+        "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fpad_thai.jpeg?alt=media&token=68cb5c0d-bf2c-483b-a7ce-67adb469e356"
+      },
+      {
+        "name": "Prawn Pad Thai (Thai Noodles)",
+        "price": 7.95,
+        "description": "Stir fried rice noodles with prawn, bean sprouts & egg",
+        "vegetarian": false,
+        "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fpad_thai.jpeg?alt=media&token=68cb5c0d-bf2c-483b-a7ce-67adb469e356"
+
+      },
+      {
+        "name": "Vegetarian Pad Thai (Thai Noodles)",
+        "price": 5.95,
+        "description": "Stir fried rice noodles with vegetables, bean sprouts & egg",
+        "vegetarian": true,
+        "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lemongrass-56f42.appspot.com/o/menu_images%2Fpad_thai.jpeg?alt=media&token=68cb5c0d-bf2c-483b-a7ce-67adb469e356"
+      },
+      {
+        "name": "Chicken Pad Si-lew",
+        "price": 6.95,
+        "description": "Stir fried rice noodle with chicken, green vegetables & egg",
+        "vegetarian": false,
+        "imgUrl": ""
+
+      },
+      {
+        "name": "Prawn Pad Si-lew",
+        "price": 7.95,
+        "description": "Stir fried rice noodle with prawns, green vegetables & egg",
+        "vegetarian": false,
+        "imgUrl": ""
+
+      }
+    ],
+    "rice_dishes": [{
+        "name": "Special Fried Rice",
+        "price": 6.95,
+        "description": "Fried rice with chicken, prawn & vegetables",
+        "vegetarian": false,
+        "imgUrl": ""
+
+      },
+      {
+        "name": "Spicy Fried Rice with Chicken & Green Curry Paste",
+        "price": 6.95,
+        "description": "Fried rice with vegetables, bamboo shoot & basil with chicken",
+        "vegetarian": false,
+        "imgUrl": ""
+
+      },
+      {
+        "name": "Chicken Spicy Thai Rice",
+        "price": 6.95,
+        "description": "Fried rice with chicken, chilli & vegetables",
+        "vegetarian": false,
+        "imgUrl": ""
+
+      },
+      {
+        "name": "Vegetable Fried Rice",
+        "price": 4.95,
+        "description": "Fried rice with vegetables & egg",
+        "vegetarian": true,
+        "imgUrl": ""
+
+      },
+      {
+        "name": "Singapore Beef Fried Rice",
+        "price": 7.25,
+        "description": "",
+        "vegetarian": false,
+        "imgUrl": ""
+
+      }
+    ]
+  },
+  "sides": [{
+      "name": "Steamed Rice",
+      "price": 2.60,
+      "description": "",
+      "vegetarian": false,
+      "imgUrl": ""
+
+    },
+    {
+      "name": "Egg Fried Rice",
+      "price": 2.95,
+      "description": "",
+      "vegetarian": false,
+      "imgUrl": ""
+
+    },
+    {
+      "name": "Coconut Rice",
+      "price": 2.95,
+      "description": "",
+      "vegetarian": false,
+      "imgUrl": ""
+
+    },
+    {
+      "name": "Sticky Rice",
+      "price": 2.95,
+      "description": "",
+      "vegetarian": false,
+      "imgUrl": ""
+
+    }
+  ],
+  "soups": [{
+      "name": "Tom Yum Kai",
+      "price": 4.95,
+      "description": "Hot & sour soup with chicken & mushrooms",
+      "vegetarian": false,
+      "imgUrl": ""
+
+    },
+    {
+      "name": "Tom Yum Kung",
+      "price": 5.45,
+      "description": "Hot & sour soup with prawns & mushrooms",
+      "vegetarian": false,
+      "imgUrl": ""
+
+    },
+    {
+      "name": "Tom Yum Hed",
+      "price": 4.50,
+      "description": "Hot & sour soup with mushrooms",
+      "vegetarian": true,
+      "imgUrl": ""
+
+    },
+    {
+      "name": "Poh Teak",
+      "price": 6.95,
+      "description": "Hot & sour soup with mixed seafood",
+      "vegetarian": false,
+      "imgUrl": ""
+
+    },
+    {
+      "name": "Tom Kha Kai",
+      "price": 4.95,
+      "description": "Creamy coconut soup with chicken & mushrooms",
+      "vegetarian": false,
+      "imgUrl": ""
+
+    },
+  ],
+  "setMeals": [{
+      "name": "Thai Set Meal A for 2 People",
+      "price": 38.95,
+      "description": "Starter: \n - Thai garden platter (consists of: spring roll, satay, prawn on toast, chicken wing & crispy wonton) \n Main Course: \n - Green chicken curry \n - Lamb ginger \n - Vegetable with oyster \n - Pad Thai (Thai noodle) \n - 2 steamed rice",
+      "vegetarian": false,
+      "imgUrl": ""
+
+    },
+    {
+      "name": "Thai Set Meal B for 2 People",
+      "price": 43.95,
+      "description": "Starter: \n - Thai garden platter (consists of: spring roll, stay, prawn on toast, chicken wing & crispy wonton) \n Soup: \n - 2 Tom yum kai (Hot & sour soup with chicken) \n Main Course: \n - Green chicken curry \n - Lamb ginger \n - Vegetable with oyster \n - Pad Thai (Thai noodle) \n - 2 steamed rice",
+      "vegetarian": false,
+      "imgUrl": ""
+
+    }
+  ],
+  "sauces": [{
+      "name": "Sweet & Sour",
+      "price": 0.35,
+      "description": "",
+      "vegetarian": false,
+      "imgUrl": ""
+
+    },
+    {
+      "name": "Sweet Chilli",
+      "price": 0.35,
+      "description": "",
+      "vegetarian": false,
+      "imgUrl": ""
+
+    },
+    {
+      "name": "Black Bean",
+      "price": 0.35,
+      "description": "",
+      "vegetarian": false,
+      "imgUrl": ""
+
+    }
+  ],
+  "deserts": [{
+      "name": "Chocolate Häagen Dazs Ice Cream",
+      "price": 4.95,
+      "description": "",
+      "vegetarian": false,
+      "imgUrl": ""
+
+    },
+    {
+      "name": "Vanilla Häagen Dazs Ice Cream",
+      "price": 4.95,
+      "description": "",
+      "vegetarian": false,
+      "imgUrl": ""
+
+    },
+    {
+      "name": "Cookies & Cream Häagen Dazs Ice Cream",
+      "price": 4.95,
+      "description": "",
+      "vegetarian": false,
+      "imgUrl": ""
+
+    },
+    {
+      "name": "Chocolate Fudge Cake",
+      "price": 3.50,
+      "description": "",
+      "vegetarian": false,
+      "imgUrl": ""
+
+    },
+    {
+      "name": "Strawberry Cheesecake",
+      "price": 3.50,
+      "description": "",
+      "vegetarian": false,
+      "imgUrl": ""
+
+    }
+  ],
+  "drinks": [{
+      "name": "Coca-Cola",
+      "price": 0.90,
+      "description": "0.33L",
+      "vegetarian": false,
+      "imgUrl": ""
+
+    },
+    {
+      "name": "Diet Coca-Cola",
+      "price": 0.90,
+      "description": "0.33L",
+      "vegetarian": false,
+      "imgUrl": ""
+
+    },
+    {
+      "name": "Fanta",
+      "price": 0.90,
+      "description": "0.33L",
+      "vegetarian": false,
+      "imgUrl": ""
+
+    },
+    {
+      "name": "7UP",
+      "price": 0.90,
+      "description": "0.33L",
+      "vegetarian": false,
+      "imgUrl": ""
+
+    },
+    {
+      "name": "Mineral Water",
+      "price": 1.50,
+      "description": "1.5L",
+      "vegetarian": false,
+      "imgUrl": ""
+
+    },
+    {
+      "name": "Sparkling Water",
+      "price": 3.50,
+      "description": "1.5L",
+      "vegetarian": false,
+      "imgUrl": ""
+
+    }
+  ],
+  "alcohol": [{
+    "name": "Singha Beer",
+    "price": 3.95,
+    "description": "335ml",
+    "vegetarian": false,
+    "imgUrl": ""
+
+  }]
 }
