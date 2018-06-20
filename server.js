@@ -4,29 +4,25 @@
 // ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 //
 const express = require('express');
-const fs = require('fs');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
-const request = require('request');
-const rp = require('request-promise');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const mongooseUniqueValidator = require('mongoose-unique-validator');
 const async = require("async");
+
+// TODO:
+// Install Axios - needed to get menu
+
 //
 // ──────────────────────────────────────────────────────────────────────────────────────────────────────────── I ──────────
 //   :::::: S E R V E R   C O N F I G U R A T I O N : :  :   :    :     :        :          :
 // ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 //
-// Makes Express avaliable
 const app = express();
-// Get our API routes
-const api = require('./server/routes/api');
-// Requirements
 require('dotenv').config()
-// Setting default server settings
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false
@@ -38,11 +34,11 @@ app.use(function (req, res, next) {
   next();
 });
 app.use(express.static(path.join(__dirname, 'dist'))); // Point static path to dist
-// app.use('/api', api); // Set our api routes - if i want to use an api for a bigger project
 
 // Connect to DB with mongoose
 mongoose.Promise = global.Promise;
 // Local DB
+// TODO: Change DB Link to db location
 mongoose.connect("mongodb://localhost:27017/seed-db", function (err) {
     if (err) {
         console.log("Error: " + err);
@@ -77,6 +73,10 @@ app.get('*', (req, res) => {
 // ─── MODELS ─────────────────────────────────────────────────────────────────────
 //
 const User = require('./server/models/userModel');
+// TODO: add to userModel:
+//       street, house number, post code, phone number
+//       past orders array
+//       Make model for order
 //
 // ─────────────────────────────────────────────────────────────────── MODELS ─────
 //
@@ -94,7 +94,11 @@ app.post('/registerUser', function (req, res, next) {
   var user = new User({
     name: data.name,
     email: data.email,
-    password: bcrypt.hashSync(data.password, 10)
+    password: bcrypt.hashSync(data.password, 10),
+    street: data.street, 
+    houseNumber: data.houseNumber,
+    postCode: data.postCode,
+    phoneNumber: data.phoneNumber
   });
   user.save(function (err, result) {
     if (err) {
@@ -170,6 +174,13 @@ app.post('/login', function (req, res, next) {
 //
 // ─────────────────────────────────────────────────────── LOGIN AND REGISTER ─────
 //
+
+// ACTIONS NEEDED:
+// Get Menu
+// Post new order
+//      update user orders
+// Get All past orders
+// Get single past order
 
 //
 // ─── DATABASE ACTIONS ROUTES ───────────────────────────────────────────────────────
@@ -365,7 +376,5 @@ app.post("/deleteAntique", function (req, res, next) {
 // Get port from environment and store in Express.
 const port = process.env.PORT || '3000';
 app.set('port', port);
-// Creates an HTTP server
 const server = http.createServer(app);
-// Listen on provided port, on all network interfaces.
 server.listen(port, () => console.log(`API running on localhost:${port}`));
