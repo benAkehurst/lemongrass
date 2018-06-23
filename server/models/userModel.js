@@ -21,6 +21,21 @@ var User = new Schema({
     },
     name: {
         type: String
+    },
+    street: {
+      type: String
+    },
+    house_number: {
+      type: String
+    },
+    post_code: {
+      type: String
+    },
+    phone_number: {
+      type: String
+    },
+    orders_history: {
+      type: Array
     }
 },
 {
