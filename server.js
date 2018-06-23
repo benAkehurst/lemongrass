@@ -12,9 +12,10 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const mongooseUniqueValidator = require('mongoose-unique-validator');
 const async = require("async");
-
-// TODO:
-// Install Axios - needed to get menu
+const axios = require("axios");
+const request = require('request');
+const firebaseAdmin = require('firebase-admin');
+const firebase = require("firebase");
 
 //
 // ──────────────────────────────────────────────────────────────────────────────────────────────────────────── I ──────────
@@ -22,7 +23,7 @@ const async = require("async");
 // ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 //
 const app = express();
-require('dotenv').config()
+require('dotenv').config();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false
@@ -35,25 +36,33 @@ app.use(function (req, res, next) {
 });
 app.use(express.static(path.join(__dirname, 'dist'))); // Point static path to dist
 
+var config = {
+  apiKey: process.env.FIREBASE_apiKey,
+  authDomain: process.env.FIREBASE_authDomain,
+  databaseURL: process.env.FIREBASE_databaseURL,
+  storageBucket: process.env.FIREBASE_storageBucket,
+};
+firebase.initializeApp(config);
+
 // Connect to DB with mongoose
 mongoose.Promise = global.Promise;
 // Local DB
 // TODO: Change DB Link to db location
-mongoose.connect("mongodb://localhost:27017/seed-db", function (err) {
-    if (err) {
-        console.log("Error: " + err);
-    } else {
-        console.log("Connected to Database")
-    }
-});
-// Live DB
-// mongoose.connect(process.env.DB_CONNECT, function (err) {
-//   if (err) {
-//     console.log("Error: " + err);
-//   } else {
-//     console.log("Connected to Database")
-//   }
+// mongoose.connect("mongodb://localhost:27017/seed-db", function (err) {
+//     if (err) {
+//         console.log("Error: " + err);
+//     } else {
+//         console.log("Connected to Database")
+//     }
 // });
+// Live DB
+mongoose.connect(process.env.DB_CONNECT, function (err) {
+  if (err) {
+    console.log("Error: " + err);
+  } else {
+    console.log("Connected to Database")
+  }
+});
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
@@ -73,6 +82,8 @@ app.get('*', (req, res) => {
 // ─── MODELS ─────────────────────────────────────────────────────────────────────
 //
 const User = require('./server/models/userModel');
+const Menu = require('./server/models/menuModel');
+const MenuItem = require('./server/models/menuItemModel');
 // TODO: add to userModel:
 //       street, house number, post code, phone number
 //       past orders array
@@ -185,6 +196,25 @@ app.post('/login', function (req, res, next) {
 //
 // ─── DATABASE ACTIONS ROUTES ───────────────────────────────────────────────────────
 //
+app.post("/getMenuItems", (req, res) => {
+  axios.get('https://api.mlab.com/api/1/databases/lemongrass/collections/menu?apiKey=' + process.env.DB_API)
+  .then((data) => {
+    res.send({
+      success: true,
+      msg:'Menu Retreived',
+      menu: data.data[0].menu
+    })
+  })
+  .catch((err) => {
+    res.send({
+      success: false,
+      msg:'Failed To Get Menu Items',
+      data: err
+    })
+  });
+});
+
+
 /**
  * Gets all the antiques in the database
  * @param {*} req
