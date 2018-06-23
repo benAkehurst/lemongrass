@@ -34,7 +34,7 @@ app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Methods', 'POST, GET, PATCH, DELETE, OPTIONS');
   next();
 });
-app.use(express.static(path.join(__dirname, 'dist'))); // Point static path to dist
+app.use(express.static(path.join(__dirname, 'dist')));
 
 var config = {
   apiKey: process.env.FIREBASE_apiKey,
@@ -44,18 +44,7 @@ var config = {
 };
 firebase.initializeApp(config);
 
-// Connect to DB with mongoose
 mongoose.Promise = global.Promise;
-// Local DB
-// TODO: Change DB Link to db location
-// mongoose.connect("mongodb://localhost:27017/seed-db", function (err) {
-//     if (err) {
-//         console.log("Error: " + err);
-//     } else {
-//         console.log("Connected to Database")
-//     }
-// });
-// Live DB
 mongoose.connect(process.env.DB_CONNECT, function (err) {
   if (err) {
     console.log("Error: " + err);
@@ -64,15 +53,9 @@ mongoose.connect(process.env.DB_CONNECT, function (err) {
   }
 });
 
-// Catch all other routes and return the index file
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
-
-//
-// ──────────────────────────────────────────────────────── DOWNLOAD DATABASE ─────
-//
-
 
 //
 // ────────────────────────────────────────────────────────────────────────────────────────────────────────────── I ──────────
@@ -82,12 +65,8 @@ app.get('*', (req, res) => {
 // ─── MODELS ─────────────────────────────────────────────────────────────────────
 //
 const User = require('./server/models/userModel');
-const Menu = require('./server/models/menuModel');
 const MenuItem = require('./server/models/menuItemModel');
-// TODO: add to userModel:
-//       street, house number, post code, phone number
-//       past orders array
-//       Make model for order
+const Order = require('./server/models/orderModel');
 //
 // ─────────────────────────────────────────────────────────────────── MODELS ─────
 //
@@ -101,15 +80,15 @@ const MenuItem = require('./server/models/menuItemModel');
  * @param {*} next
  */
 app.post('/registerUser', function (req, res, next) {
-  var data = req.body.data;
+  var data = req.body;
   var user = new User({
-    name: data.name,
     email: data.email,
     password: bcrypt.hashSync(data.password, 10),
+    name: data.name,
     street: data.street, 
-    houseNumber: data.houseNumber,
-    postCode: data.postCode,
-    phoneNumber: data.phoneNumber
+    house_number: data.house_number,
+    post_code: data.post_code,
+    phone_number: data.phone_number
   });
   user.save(function (err, result) {
     if (err) {
@@ -139,7 +118,7 @@ app.post('/registerUser', function (req, res, next) {
  * @param {*} next
  */
 app.post('/login', function (req, res, next) {
-  var data = req.body.data;
+  var data = req.body;
   User.findOne({
     email: data.email
   }, function (err, user) {
@@ -186,16 +165,12 @@ app.post('/login', function (req, res, next) {
 // ─────────────────────────────────────────────────────── LOGIN AND REGISTER ─────
 //
 
-// ACTIONS NEEDED:
-// Get Menu
-// Post new order
-//      update user orders
-// Get All past orders
-// Get single past order
-
 //
 // ─── DATABASE ACTIONS ROUTES ───────────────────────────────────────────────────────
 //
+/**
+ * THIS FUNCTION QURIES MLAB DB AND GETS ALL MENU ITEMS
+ */
 app.post("/getMenuItems", (req, res) => {
   axios.get('https://api.mlab.com/api/1/databases/lemongrass/collections/menu?apiKey=' + process.env.DB_API)
   .then((data) => {
@@ -214,13 +189,12 @@ app.post("/getMenuItems", (req, res) => {
   });
 });
 
-
 /**
- * Gets all the antiques in the database
+ * GETS ALL THE USERS PAST ORDERS
  * @param {*} req
  * @param {*} res
  */
-app.post("/getAllAntiques", function (req, res) {
+app.post("/getAllPastOrders", function (req, res) {
   Antique.find({})
     .exec(function (err, antiques) {
       if (err) {
@@ -240,12 +214,12 @@ app.post("/getAllAntiques", function (req, res) {
 });
 
 /**
- * Gets one antique in the database
+ * GETS SINGLE PAST ORDER
  * @param {*} req
  * @param {*} res
  * @param {*} next
  */
-app.post("/getAntique", function (req, res, next) {
+app.post("/getSinglePastOrder", function (req, res, next) {
   Antique.findById({
       _id: req.body.data.antique
     })
@@ -267,54 +241,12 @@ app.post("/getAntique", function (req, res, next) {
 });
 
 /**
- * Saves a new Antique to the user model in the database
+ * SAVES A NEW ORDER TO THE USER MODEL
  * @param {*} req
  * @param {*} res
  * @param {*} next
  */
-app.post("/saveNewAntique", function (req, res, next) {
-  const data = req.body.data;
-  const newAntique = new Antique({
-    name: data.antique.name,
-    artist: data.antique.artist,
-    year: data.antique.year,
-    category: data.antique.category.category,
-    subCategory: data.antique.subCategory,
-    signed: data.antique.signed,
-    boughtPrice: data.antique.boughtPrice,
-    soldPrice: data.antique.soldPrice,
-    value: data.antiqueValue,
-    image: data.antique.image,
-    description: data.antique.description,
-    condition: data.antique.condition,
-    width: data.antique.width,
-    height: data.antique.height,
-    depth: data.antique.depth,
-    material: data.antique.material,
-    location: data.antique.location,
-    provenance: data.antique.provenance,
-    provenanceImage: data.antique.provenanceImage,
-    status: data.antique.status,
-  });
-  newAntique.save(function (err, antique) {
-    if (err) {
-      return next(err);
-      res.send(err);
-    }
-    res.send({
-      success: true,
-      message: 'antique saved'
-    });
-  });
-});
-
-/**
- * Edits an antique in the database
- * @param {*} req
- * @param {*} res
- * @param {*} next
- */
-app.post("/editAntique/:_id", function (req, res, next) {
+app.post("/saveNewOrder/:_id", function (req, res, next) {
   var updatedAntique = req.body.data.antique;
   var updatedValue = req.body.data.antiqueValue
   async.parallel({
@@ -350,48 +282,6 @@ app.post("/editAntique/:_id", function (req, res, next) {
       });
     }
   )
-});
-
-/**
- * removes an antique in the database
- * @param {*} req
- * @param {*} res
- * @param {*} next
- */
-app.post("/deleteAntique", function (req, res, next) {
-  var routeId = req.body.data.route;
-  var userId = req.body.data.user;
-  async.parallel({
-      updateRoute: function (callback) {
-        Route.findByIdAndRemove(routeId).exec(function (err, updatedRoute) {
-          callback(err, updatedRoute);
-        });
-      },
-      updatedUser: function (callback) {
-        User.findByIdAndUpdate(
-          userId, {
-            $pull: {
-              savedRoutes: routeId
-            }
-          }, {
-            new: true
-          }
-        ).exec(function (err, updatedUser) {
-          callback(err, updatedUser);
-        });
-      }
-    },
-    function (err, results) {
-      if (err) {
-        next(err);
-        return;
-      }
-      res.send({
-        success: true,
-        user: results.updatedUser
-      });
-    }
-  );
 });
 
 //
