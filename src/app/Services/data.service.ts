@@ -6,6 +6,8 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 import UserDataModel from '../DataModels/UserDataModel';
+import MenuItemDataModel from '../DataModels/MenuItemDataModel';
+import OrderDataModel from '../DataModels/OrderDataModel';
 
 @Injectable()
 export class DataService {
@@ -14,11 +16,13 @@ export class DataService {
   private localUrl = 'http://localhost:3000/';
   private liveUrl = '';
   User: UserDataModel;
-  selectedItemId: String = '';
-  itemImageUrl: String = '';
+  MenuItem: MenuItemDataModel;
+  Order: OrderDataModel;
 
   constructor(private http: Http) {
     this.User = new UserDataModel();
+    this.MenuItem = new MenuItemDataModel();
+    this.Order = new OrderDataModel();
   }
 
   //
@@ -44,13 +48,13 @@ export class DataService {
       .map(res => res.json());
   }
 
-  public getUserProfile() {
+  public getUserData() {
     const userId = this.getUserId();
     const dataObj = {
-      user: userId
+      _id: userId
     };
     return this.http
-      .post(this.localUrl + 'getProfile', { data: dataObj }, { headers: this.headers })
+      .post(this.localUrl + 'getUserData', { data: dataObj }, { headers: this.headers })
       .map(res => res.json());
   }
   //
@@ -58,49 +62,19 @@ export class DataService {
   //
 
   //
-  // ─── ANTIQUE REQUESTS ───────────────────────────────────────────────────────────
+  // ─── USER UPDATE REQUESTS ───────────────────────────────────────────────────────────
   //
-  public getAllAntiques() {
-    return this.http
-      .post(this.localUrl + 'getAllAntiques', { headers: this.headers })
-      .map(res => res.json());
-  }
 
-  public getAntique(antiqueId) {
-    const dataObj = {
-    };
-    return this.http
-      .post(this.localUrl + 'getAntique', { data: dataObj }, { headers: this.headers })
-      .map(res => res.json());
-  }
-
-  public saveAntique(itemValObj) {
+  public saveNewOrder() {
     const userId = this.getUserId();
     const dataObj = {
-      user: userId
+      _id: userId,
+      new_order: {
+        'ordered_items': this.Order
+      }
     };
     return this.http
-      .post(this.localUrl + 'saveNewAntique', { data: dataObj }, { headers: this.headers })
-      .map(res => res.json());
-  }
-
-  public editAntique(itemValObj) {
-    const dataObj = {
-    };
-    return this.http
-      .post(this.localUrl + 'editAntique/' + this.selectedItemId, { data: dataObj }, { headers: this.headers })
-      .map(res => res.json());
-  }
-
-  public deleteAntique(antiqueId) {
-    const userId = this.getUserId();
-    const dataObj = {
-      user: userId,
-      antique: antiqueId
-    };
-    // console.log(dataObj);
-    return this.http
-      .post(this.localUrl + 'deleteAntique', { data: dataObj }, { headers: this.headers })
+      .post(this.localUrl + 'saveNewOrder', { data: dataObj }, { headers: this.headers })
       .map(res => res.json());
   }
   //
