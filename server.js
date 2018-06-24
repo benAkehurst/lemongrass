@@ -204,37 +204,10 @@ app.post("/getAllPastOrders", function (req, res) {
           message: err
         });
       } else {
-        console.log(user);
+        // console.log(user);
         res.send({
           success: true,
           data: user
-        })
-      }
-    })
-});
-
-/**
- * GETS SINGLE PAST ORDER
- * @param {*} req
- * @param {*} res
- * @param {*} next
- */
-app.post("/getSinglePastOrder", function (req, res, next) {
-  Antique.findById({
-      _id: req.body.data.antique
-    })
-    .exec(function (err, antique) {
-      if (err) {
-        console.log("Error: " + " " + err);
-        res.send({
-          success: false,
-          message: err
-        });
-      } else {
-        // console.log(antique);
-        res.send({
-          success: true,
-          data: antique
         })
       }
     })
@@ -246,42 +219,28 @@ app.post("/getSinglePastOrder", function (req, res, next) {
  * @param {*} res
  * @param {*} next
  */
-app.post("/saveNewOrder/:_id", function (req, res, next) {
-  var updatedAntique = req.body.data.antique;
-  var updatedValue = req.body.data.antiqueValue
-  async.parallel({
-      updateAntique: function (callback) {
-        Antique.findByIdAndUpdate(req.params._id, {
-          updatedAntique
-        }).exec(function (err, serverUpdatedAntique) {
-          callback(err, serverUpdatedAntique);
-        });
-      },
-      updateAntiqueValue: function (callback) {
-        Antique.findByIdAndUpdate(
-          req.params._id, {
-            $push: {
-              value: updatedValue
-            }
-          }, {
-            new: true
-          }
-        ).exec(function (err, finalUpdatedAntique) {
-          callback(err, finalUpdatedAntique);
-        });
+app.post("/saveNewOrder", (req, res) => {
+  let newOrder = req.body.new_order;
+  User.update({_id: req.body._id}, {
+      $push: {
+        orders_history: newOrder
       }
-    },
-    function (err, antique) {
-      if (err) {
-        next(err);
-        return;
-      }
-      res.send({
-        success: true,
-        antique: antique
-      });
     }
   )
+  .exec((err, user) => {
+    if (err) {
+      console.log("Error: " + " " + err);
+      res.send({
+        success: false,
+        message: err
+      });
+    } else {
+      res.send({
+        success: true,
+        msg: 'Order Submited Successfully'
+      })
+    }
+  })
 });
 
 //
