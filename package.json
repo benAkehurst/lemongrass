@@ -47,6 +47,7 @@
     "json2xls": "^0.1.2",
     "jsonwebtoken": "^8.1.1",
     "mailgun-js": "^0.16.0",
+    "materialize-css": "^1.0.0-rc.2",
     "mongoose": "^5.0.6",
     "mongoose-type-url": "^1.0.2",
     "mongoose-unique-validator": "^2.0.0",
