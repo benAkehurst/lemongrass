@@ -195,8 +195,8 @@ app.post("/getMenuItems", (req, res) => {
  * @param {*} res
  */
 app.post("/getAllPastOrders", function (req, res) {
-  Antique.find({})
-    .exec(function (err, antiques) {
+  User.findById({'_id': req.body._id})
+    .exec(function (err, user) {
       if (err) {
         console.log("Error: " + " " + err);
         res.send({
@@ -204,10 +204,10 @@ app.post("/getAllPastOrders", function (req, res) {
           message: err
         });
       } else {
-        // console.log(antiques);
+        console.log(user);
         res.send({
           success: true,
-          data: antiques
+          data: user
         })
       }
     })
