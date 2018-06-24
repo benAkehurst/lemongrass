@@ -194,8 +194,8 @@ app.post("/getMenuItems", (req, res) => {
  * @param {*} req
  * @param {*} res
  */
-app.post("/getAllPastOrders", function (req, res) {
-  User.findById({'_id': req.body._id})
+app.post("/getUserData", function (req, res) {
+  User.findById({'_id': req.body.data._id})
     .exec(function (err, user) {
       if (err) {
         console.log("Error: " + " " + err);
@@ -220,7 +220,7 @@ app.post("/getAllPastOrders", function (req, res) {
  * @param {*} next
  */
 app.post("/saveNewOrder", (req, res) => {
-  let newOrder = req.body.new_order;
+  let newOrder = req.body.data.new_order;
   User.update({_id: req.body._id}, {
       $push: {
         orders_history: newOrder
