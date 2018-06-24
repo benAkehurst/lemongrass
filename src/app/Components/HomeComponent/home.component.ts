@@ -19,8 +19,6 @@ constructor(public dataService: DataService, private router: Router) {
   // }
 }
 
-errors: any;
-
 ngOnInit() {
 }
 
