@@ -19,9 +19,21 @@ export class LoginComponent implements OnInit {
     jwt: string;
     id: string;
     name: string;
+  
+    username: string;
+    password: string;
+    showSpinner: any;
 
     ngOnInit() {
 
+    }
+
+    login(): void {
+      if (this.username === 'admin' && this.password === 'admin') {
+        this.router.navigate(['home']);
+      } else {
+        alert('Invalid credentials');
+      }
     }
 
     public loginUser() {
