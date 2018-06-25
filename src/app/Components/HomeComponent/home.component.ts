@@ -18,8 +18,24 @@ constructor(public dataService: DataService, private router: Router) {
   //   this.router.navigate(['/login']);
   // }
 }
+errors: any;
+menu: any;
 
 ngOnInit() {
+  this.getMenu();
+}
+
+public getMenu() {
+  this.dataService.getMenu().subscribe(response => {
+    this.menu = response.menu;
+    console.log(response);
+    console.log(this.menu);
+  },
+    error => {
+      this.errors = error;
+      console.log(error);
+      this.openSwal('Error', 'The database is empty at the moment, try adding an item');
+    });
 }
 
 public getStorageItems() {
