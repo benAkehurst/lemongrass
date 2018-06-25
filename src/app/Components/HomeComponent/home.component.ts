@@ -12,30 +12,10 @@ import swal from 'sweetalert';
 
 export class HomeComponent implements OnInit {
 
-constructor(public dataService: DataService, private router: Router) {
-  if (!this.menu) {
-    this.menu = {};
-  }
-}
+constructor(public dataService: DataService, private router: Router) { }
 errors: any;
-menu: any;
 
 ngOnInit() {
-  this.getMenuFromApi();
-}
-
-public getMenuFromApi() {
-  this.dataService.getMenu().subscribe(response => {
-    if (response.success = true) {
-      this.menu = response.menu;
-      console.log(this.menu);
-    }
-  },
-    error => {
-      this.errors = error;
-      console.log(error);
-      this.openSwal('Error', 'The menu could not be fetched');
-    });
 }
 
 public getStorageItems() {
