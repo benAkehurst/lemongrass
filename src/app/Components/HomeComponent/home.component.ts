@@ -13,34 +13,21 @@ import swal from 'sweetalert';
 export class HomeComponent implements OnInit {
 
 constructor(public dataService: DataService, private router: Router) {
-  // const user = this.getStorageItems();
-  // if (user.status === false) {
-  //   this.router.navigate(['/login']);
-  // }
+  if (!this.menu) {
+    this.menu = {};
+  }
 }
 errors: any;
 menu: any;
 
 ngOnInit() {
-  this.getMenu();
-}
-
-public getMenu() {
-  const menu = this.getMenuFromStorage();
-  if (!menu) {
-    this.getMenuFromApi();
-  } else {
-    this.menu = menu;
-    console.log(this.menu);
-  }
+  this.getMenuFromApi();
 }
 
 public getMenuFromApi() {
   this.dataService.getMenu().subscribe(response => {
     if (response.success = true) {
       this.menu = response.menu;
-      this.setMenuInStorage(this.menu);
-      console.log(response);
       console.log(this.menu);
     }
   },
@@ -49,14 +36,6 @@ public getMenuFromApi() {
       console.log(error);
       this.openSwal('Error', 'The menu could not be fetched');
     });
-}
-
-public getMenuFromStorage() {
-  localStorage.getItem('menu');
-}
-
-public setMenuInStorage(menu) {
-  localStorage.setItem('menu', JSON.stringify(menu));
 }
 
 public getStorageItems() {
