@@ -26,16 +26,37 @@ ngOnInit() {
 }
 
 public getMenu() {
-  this.dataService.getMenu().subscribe(response => {
-    this.menu = response.menu;
-    console.log(response);
+  const menu = this.getMenuFromStorage();
+  if (!menu) {
+    this.getMenuFromApi();
+  } else {
+    this.menu = menu;
     console.log(this.menu);
+  }
+}
+
+public getMenuFromApi() {
+  this.dataService.getMenu().subscribe(response => {
+    if (response.success = true) {
+      this.menu = response.menu;
+      this.setMenuInStorage(this.menu);
+      console.log(response);
+      console.log(this.menu);
+    }
   },
     error => {
       this.errors = error;
       console.log(error);
-      this.openSwal('Error', 'The database is empty at the moment, try adding an item');
+      this.openSwal('Error', 'The menu could not be fetched');
     });
+}
+
+public getMenuFromStorage() {
+  localStorage.getItem('menu');
+}
+
+public setMenuInStorage(menu) {
+  localStorage.setItem('menu', JSON.stringify(menu));
 }
 
 public getStorageItems() {
