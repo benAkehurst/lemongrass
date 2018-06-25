@@ -25,9 +25,6 @@ export class DataService {
     this.Order = new OrderDataModel();
   }
 
-  //
-  // ─── USER REQUESTS ──────────────────────────────────────────────────────────────
-  //
   /**
   * HANDLES REGISTERING A NEW USER
   * @param this.User
@@ -48,6 +45,12 @@ export class DataService {
       .map(res => res.json());
   }
 
+  public getMenu() {
+    return this.http
+      .post(this.localUrl + 'getMenuItems', { headers: this.headers })
+      .map(res => res.json());
+  }
+
   public getUserData() {
     const userId = this.getUserId();
     const dataObj = {
@@ -57,13 +60,6 @@ export class DataService {
       .post(this.localUrl + 'getUserData', { data: dataObj }, { headers: this.headers })
       .map(res => res.json());
   }
-  //
-  // ──────────────────────────────────────────────────────────── USER REQUESTS ─────
-  //
-
-  //
-  // ─── USER UPDATE REQUESTS ───────────────────────────────────────────────────────────
-  //
 
   public saveNewOrder() {
     const userId = this.getUserId();
@@ -77,9 +73,6 @@ export class DataService {
       .post(this.localUrl + 'saveNewOrder', { data: dataObj }, { headers: this.headers })
       .map(res => res.json());
   }
-  //
-  // ───────────────────────────────────────────────────────── ANTIQUE REQUESTS ─────
-  //
 
   public getUserId() {
     const userId = localStorage.getItem('id');
