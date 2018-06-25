@@ -1,0 +1,92 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8	col-md-8	col-lg-8	col-xl-8">
+      <div class="menu-header">
+        <h1>Menu</h1>
+      </div>
+      <div class="menu-sections">
+        <section>
+          <div class="section-title">
+            <h3>Popular</h3>
+            <div class="menu-items"></div>
+          </div>
+        </section>
+        <section>
+          <div class="section-title">
+            <h3>Starters</h3>
+            <div class="menu-items"></div>
+          </div>
+        </section>
+        <section>
+          <div class="section-title">
+            <h3>Mains</h3>
+            <div class="menu-items"></div>
+          </div>
+        </section>
+        <section>
+          <div class="section-title">
+            <h3>Sides</h3>
+            <div class="menu-items"></div>
+          </div>
+        </section>
+        <section>
+          <div class="section-title">
+            <h3>Soups</h3>
+            <div class="menu-items"></div>
+          </div>
+        </section>
+        <section>
+          <div class="section-title">
+            <h3>Set Meals</h3>
+            <div class="menu-items"></div>
+          </div>
+        </section>
+        <section>
+          <div class="section-title">
+            <h3>Sauces</h3>
+            <div class="menu-items"></div>
+          </div>
+        </section>
+        <section>
+          <div class="section-title">
+            <h3>Deserts</h3>
+            <div class="menu-items"></div>
+          </div>
+        </section>
+        <section>
+          <div class="section-title">
+            <h3>Drinks</h3>
+            <div class="menu-items"></div>
+          </div>
+        </section>
+        <section>
+          <div class="section-title">
+            <h3>Alcohol</h3>
+            <div class="menu-items">
+              <div class="single-item" *ngFor="let alcohol of this.menu.alcohol">
+                {{alcohol.name}} {{alcohol.price}} {{alcohol.description}}
+                <img [src]="alcohol.imgUrl" alt="image of alcoholic drink">
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="col-sm-4	col-md-4	col-lg-4	col-xl-4">
+      <section>
+        <div class="section-title">
+          <h3>Current Order</h3>
+          <div class="current-order"></div>
+        </div>
+      </section>
+      <section>
+        <div class="total-price">
+          <h3>Total Price</h3>
+          <div class="price-output">
+            <h3></h3>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
