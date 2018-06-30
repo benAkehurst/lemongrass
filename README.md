@@ -84,5 +84,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* [Menu Card](https://codepen.io/alexpopovich/pen/zZamKQ)
+* [Menu Card](https://codepen.io/lucasalmeida/pen/vKXeLG)
 * [Jumbotron Image](https://www.pexels.com/photo/scenic-view-of-the-mountains-733092/)
