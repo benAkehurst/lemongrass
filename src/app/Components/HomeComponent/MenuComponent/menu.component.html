@@ -31,6 +31,7 @@
                   </div>
                   <div class="header">
                     <h3>{{popular.name}}</h3>
+                    <i class="fas fa-leaf" *ngIf="popular.vegetarian"></i>
                     <div class="price">
                       <span>£ {{popular.price}}</span>
                     </div>
@@ -39,7 +40,7 @@
                     <p>{{popular.description}}</p>
                   </div>
                   <div class="add-to-order">
-                    <button mat-raised-button>
+                    <button mat-raised-button (click)="addItemToMenu(popular)">
                       Add To Order
                     </button>
                   </div>
@@ -60,6 +61,7 @@
                   </div>
                   <div class="header">
                     <h3>{{starter.name}}</h3>
+                    <i class="fas fa-leaf" *ngIf="starter.vegetarian"></i>
                     <div class="price">
                       <span>£ {{starter.price}}</span>
                     </div>
@@ -68,7 +70,7 @@
                     <p>{{starter.description}}</p>
                   </div>
                   <div class="add-to-order">
-                    <button mat-raised-button>
+                    <button mat-raised-button (click)="addItemToMenu(starter)">
                       Add To Order
                     </button>
                   </div>
@@ -82,7 +84,131 @@
             <h3 id="mains">Mains</h3>
             <button mat-button (click)="scrollTo('top')">Back to the top</button>
             <div class="menu-items">
-
+              <div class="chicken-dishes">
+                <h4>Chicken Dishes</h4>
+                <div class="single-item" *ngFor="let chicken of this.menu.mains.chicken_dishes">
+                <div class="card">
+                  <div class="photo">
+                    <img [src]="chicken.imgUrl" alt="image of a chicken meal">
+                  </div>
+                  <div class="header">
+                    <h3>{{chicken.name}}</h3>
+                    <i class="fas fa-leaf" *ngIf="chicken.vegetarian"></i>
+                    <div class="price">
+                      <span>£ {{chicken.price}}</span>
+                    </div>
+                  </div>
+                  <div class="description">
+                    <p>{{chicken.description}}</p>
+                  </div>
+                  <div class="add-to-order">
+                    <button mat-raised-button (click)="addItemToMenu(chicken)">
+                      Add To Order
+                    </button>
+                  </div>
+                </div>
+              </div>
+              </div>
+              <div class="thai-curries">
+                <h4>Thai Curries</h4>
+                <div class="single-item" *ngFor="let curry of this.menu.mains.thai_curries">
+                <div class="card">
+                  <div class="photo">
+                    <img [src]="curry.imgUrl" alt="image of a thai curry meal">
+                  </div>
+                  <div class="header">
+                    <h3>{{curry.name}}</h3>
+                    <i class="fas fa-leaf" *ngIf="curry.vegetarian"></i>
+                    <div class="price">
+                      <span>£ {{curry.price}}</span>
+                    </div>
+                  </div>
+                  <div class="description">
+                    <p>{{curry.description}}</p>
+                  </div>
+                  <div class="add-to-order">
+                    <button mat-raised-button (click)="addItemToMenu(curry)">
+                      Add To Order
+                    </button>
+                  </div>
+                </div>
+              </div>
+              </div>
+              <div class="noodle-dishes">
+                <h4>Noodle Dishes</h4>
+                <div class="single-item" *ngFor="let noodle of this.menu.mains.noodle_dishes">
+                <div class="card">
+                  <div class="photo">
+                    <img [src]="noodle.imgUrl" alt="image of a noodle meal">
+                  </div>
+                  <div class="header">
+                    <h3>{{noodle.name}}</h3>
+                    <i class="fas fa-leaf" *ngIf="noodle.vegetarian"></i>
+                    <div class="price">
+                      <span>£ {{noodle.price}}</span>
+                    </div>
+                  </div>
+                  <div class="description">
+                    <p>{{noodle.description}}</p>
+                  </div>
+                  <div class="add-to-order">
+                    <button mat-raised-button (click)="addItemToMenu(noodle)">
+                      Add To Order
+                    </button>
+                  </div>
+                </div>
+              </div>
+              </div>
+              <div class="rice_dishes">
+                <h4>Rice Dishes</h4>
+                <div class="single-item" *ngFor="let rice of this.menu.mains.rice_dishes">
+                <div class="card">
+                  <div class="photo">
+                    <img [src]="rice.imgUrl" alt="image of a rice meal">
+                  </div>
+                  <div class="header">
+                    <h3>{{rice.name}}</h3>
+                    <i class="fas fa-leaf" *ngIf="rice.vegetarian"></i>
+                    <div class="price">
+                      <span>£ {{rice.price}}</span>
+                    </div>
+                  </div>
+                  <div class="description">
+                    <p>{{rice.description}}</p>
+                  </div>
+                  <div class="add-to-order">
+                    <button mat-raised-button (click)="addItemToMenu(rice)">
+                      Add To Order
+                    </button>
+                  </div>
+                </div>
+              </div>
+              </div>
+              <div class="vegetable_dishes">
+                <h4>Vegetable Dishes</h4>
+                <div class="single-item" *ngFor="let veg of this.menu.mains.vegetable_dishes">
+                <div class="card">
+                  <div class="photo">
+                    <img [src]="veg.imgUrl" alt="image of a Vegetable meal">
+                  </div>
+                  <div class="header">
+                    <h3>{{veg.name}}</h3>
+                    <i class="fas fa-leaf" *ngIf="veg.vegetarian"></i>
+                    <div class="price">
+                      <span>£ {{veg.price}}</span>
+                    </div>
+                  </div>
+                  <div class="description">
+                    <p>{{veg.description}}</p>
+                  </div>
+                  <div class="add-to-order">
+                    <button mat-raised-button (click)="addItemToMenu(veg)">
+                      Add To Order
+                    </button>
+                  </div>
+                </div>
+              </div>
+              </div>
             </div>
           </div>
         </section>
@@ -98,6 +224,7 @@
                   </div>
                   <div class="header">
                     <h3>{{side.name}}</h3>
+                    <i class="fas fa-leaf" *ngIf="side.vegetarian"></i>
                     <div class="price">
                       <span>£ {{side.price}}</span>
                     </div>
@@ -106,7 +233,7 @@
                     <p>{{side.description}}</p>
                   </div>
                   <div class="add-to-order">
-                    <button mat-raised-button>
+                    <button mat-raised-button (click)="addItemToMenu(side)">
                       Add To Order
                     </button>
                   </div>
@@ -127,6 +254,7 @@
                   </div>
                   <div class="header">
                     <h3>{{soup.name}}</h3>
+                    <i class="fas fa-leaf" *ngIf="soup.vegetarian"></i>
                     <div class="price">
                       <span>£ {{soup.price}}</span>
                     </div>
@@ -135,7 +263,7 @@
                     <p>{{soup.description}}</p>
                   </div>
                   <div class="add-to-order">
-                    <button mat-raised-button>
+                    <button mat-raised-button (click)="addItemToMenu(soup)">
                       Add To Order
                     </button>
                   </div>
@@ -156,6 +284,7 @@
                   </div>
                   <div class="header">
                     <h3>{{setMeal.name}}</h3>
+                    <i class="fas fa-leaf" *ngIf="setMeal.vegetarian"></i>
                     <div class="price">
                       <span>£ {{setMeal.price}}</span>
                     </div>
@@ -164,7 +293,7 @@
                     <p>{{setMeal.description}}</p>
                   </div>
                   <div class="add-to-order">
-                    <button mat-raised-button>
+                    <button mat-raised-button (click)="addItemToMenu(setMeal)">
                       Add To Order
                     </button>
                   </div>
@@ -185,6 +314,7 @@
                   </div>
                   <div class="header">
                     <h3>{{sauce.name}}</h3>
+                    <i class="fas fa-leaf" *ngIf="sauce.vegetarian"></i>
                     <div class="price">
                       <span>£ {{sauce.price}}</span>
                     </div>
@@ -193,7 +323,7 @@
                     <p>{{sauce.description}}</p>
                   </div>
                   <div class="add-to-order">
-                    <button mat-raised-button>
+                    <button mat-raised-button (click)="addItemToMenu(sauce)">
                       Add To Order
                     </button>
                   </div>
@@ -214,6 +344,7 @@
                   </div>
                   <div class="header">
                     <h3>{{desert.name}}</h3>
+                    <i class="fas fa-leaf" *ngIf="desert.vegetarian"></i>
                     <div class="price">
                       <span>£ {{desert.price}}</span>
                     </div>
@@ -222,7 +353,7 @@
                     <p>{{desert.description}}</p>
                   </div>
                   <div class="add-to-order">
-                    <button mat-raised-button>
+                    <button mat-raised-button (click)="addItemToMenu(desert)">
                       Add To Order
                     </button>
                   </div>
@@ -251,7 +382,7 @@
                     <p>{{drink.description}}</p>
                   </div>
                   <div class="add-to-order">
-                    <button mat-raised-button>
+                    <button mat-raised-button (click)="addItemToMenu(drink)">
                       Add To Order
                     </button>
                   </div>
@@ -280,7 +411,7 @@
                     <p>{{alcohol.description}}</p>
                   </div>
                   <div class="add-to-order">
-                    <button mat-raised-button>
+                    <button mat-raised-button (click)="addItemToMenu(alcohol)">
                       Add To Order
                     </button>
                   </div>
@@ -292,7 +423,8 @@
       </div>
     </div>
     <div class="col-sm-4	col-md-4	col-lg-4	col-xl-4">
-      <section>
+      <div class="fixed">
+        <section>
         <div class="section-title">
           <h3>Current Order</h3>
           <div class="current-order"></div>
@@ -306,6 +438,7 @@
           </div>
         </div>
       </section>
+      </div>
     </div>
   </div>
 </div>

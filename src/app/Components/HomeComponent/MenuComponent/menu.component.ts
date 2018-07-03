@@ -14,9 +14,13 @@ export class MenuComponent implements OnInit {
     if (!this.menu) {
       this.menu = {};
     }
+    if (!this.menu.mains) {
+      this.menu.mains = {};
+    }
   }
   errors: any;
   menu: any;
+  selectedItems: Array<any> = [];
 
   ngOnInit() {
     this.getMenuFromApi();
@@ -35,6 +39,10 @@ export class MenuComponent implements OnInit {
         console.log(error);
         this.openSwal('Error', 'The menu could not be fetched');
       });
+  }
+
+  public addItemToMenu(item: any): void {
+    console.log(item);
   }
 
   public scrollTo(id: string): void {

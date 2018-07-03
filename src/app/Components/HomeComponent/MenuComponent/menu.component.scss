@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 $raleway: 'Raleway', sans-serif;
+$color1: rgba(124, 193, 88, 1);
 
 .menu-items-container {
   font-family: $raleway;
@@ -59,4 +60,14 @@ $raleway: 'Raleway', sans-serif;
     align-items: center;
     flex-direction: column;
   }
+}
+
+.fa-leaf {
+  color: $color1;
+}
+
+.fixed {
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
