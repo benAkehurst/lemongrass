@@ -21,6 +21,7 @@ export class MenuComponent implements OnInit {
   errors: any;
   menu: any;
   selectedItems: Array<any> = [];
+  totalPrice: any = 0;
 
   ngOnInit() {
     this.getMenuFromApi();
@@ -43,6 +44,12 @@ export class MenuComponent implements OnInit {
 
   public addItemToMenu(item: any): void {
     console.log(item);
+    this.calculateTotal(item.price);
+    console.log(this.totalPrice);
+  }
+
+  public calculateTotal(price: number) {
+    this.totalPrice = this.totalPrice + price;
   }
 
   public scrollTo(id: string): void {
