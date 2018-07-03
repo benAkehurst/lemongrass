@@ -9,72 +9,232 @@
           <div class="section-title">
             <h3>Popular</h3>
             <div class="menu-items">
-
-              <div class="card">
-                <div class="photo">
-                  <img src="http://cdn.pcwallart.com/images/pepperoni-pizza-little-caesars-wallpaper-1.jpg" alt="Pepperoni" />
-                </div>
-                <div class="header">
-                  <h3>Pepperoni</h3>
-                  <div class="price">
-                    <span class="currency">R$</span>29
-                    <small>.90</small>
+              <div class="single-item" *ngFor="let popular of this.menu.popular">
+                <div class="card">
+                  <div class="photo">
+                    <img [src]="popular.imgUrl" alt="image of a set meal">
+                  </div>
+                  <div class="header">
+                    <h3>{{popular.name}}</h3>
+                    <div class="price">
+                      <span>£ {{popular.price}}</span>
+                    </div>
+                  </div>
+                  <div class="description">
+                    <p>{{popular.description}}</p>
+                  </div>
+                  <div class="add-to-order">
+                    <button mat-raised-button>
+                      Add To Order
+                    </button>
                   </div>
                 </div>
-                <div class="description">
-                  <p>(Mussarela ralada, salame italiano, champignon , pimentões, molho de tomate e orégano)</p>
-                </div>
               </div>
-
             </div>
           </div>
         </section>
         <section>
           <div class="section-title">
             <h3>Starters</h3>
-            <div class="menu-items"></div>
+            <div class="menu-items">
+              <div class="single-item" *ngFor="let starter of this.menu.starters">
+                <div class="card">
+                  <div class="photo">
+                    <img [src]="starter.imgUrl" alt="image of a set meal">
+                  </div>
+                  <div class="header">
+                    <h3>{{starter.name}}</h3>
+                    <div class="price">
+                      <span>£ {{starter.price}}</span>
+                    </div>
+                  </div>
+                  <div class="description">
+                    <p>{{starter.description}}</p>
+                  </div>
+                  <div class="add-to-order">
+                    <button mat-raised-button>
+                      Add To Order
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         <section>
           <div class="section-title">
             <h3>Mains</h3>
-            <div class="menu-items"></div>
+            <div class="menu-items">
+              
+            </div>
           </div>
         </section>
         <section>
           <div class="section-title">
             <h3>Sides</h3>
-            <div class="menu-items"></div>
+            <div class="menu-items">
+              <div class="single-item" *ngFor="let side of this.menu.sides">
+                <div class="card">
+                  <div class="photo">
+                    <img [src]="side.imgUrl" alt="image of a set meal">
+                  </div>
+                  <div class="header">
+                    <h3>{{side.name}}</h3>
+                    <div class="price">
+                      <span>£ {{side.price}}</span>
+                    </div>
+                  </div>
+                  <div class="description">
+                    <p>{{side.description}}</p>
+                  </div>
+                  <div class="add-to-order">
+                    <button mat-raised-button>
+                      Add To Order
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         <section>
           <div class="section-title">
             <h3>Soups</h3>
-            <div class="menu-items"></div>
+            <div class="menu-items">
+              <div class="single-item" *ngFor="let soup of this.menu.soups">
+                <div class="card">
+                  <div class="photo">
+                    <img [src]="soup.imgUrl" alt="image of a soup">
+                  </div>
+                  <div class="header">
+                    <h3>{{soup.name}}</h3>
+                    <div class="price">
+                      <span>£ {{soup.price}}</span>
+                    </div>
+                  </div>
+                  <div class="description">
+                    <p>{{soup.description}}</p>
+                  </div>
+                  <div class="add-to-order">
+                    <button mat-raised-button>
+                      Add To Order
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         <section>
           <div class="section-title">
             <h3>Set Meals</h3>
-            <div class="menu-items"></div>
+            <div class="menu-items">
+              <div class="single-item" *ngFor="let setMeal of this.menu.setMeals">
+                <div class="card">
+                  <div class="photo">
+                    <img [src]="setMeal.imgUrl" alt="image of a set meal">
+                  </div>
+                  <div class="header">
+                    <h3>{{setMeal.name}}</h3>
+                    <div class="price">
+                      <span>£ {{setMeal.price}}</span>
+                    </div>
+                  </div>
+                  <div class="description">
+                    <p>{{setMeal.description}}</p>
+                  </div>
+                  <div class="add-to-order">
+                    <button mat-raised-button>
+                      Add To Order
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         <section>
           <div class="section-title">
             <h3>Sauces</h3>
-            <div class="menu-items"></div>
+            <div class="menu-items">
+              <div class="single-item" *ngFor="let sauce of this.menu.sauces">
+                <div class="card">
+                  <div class="photo">
+                    <img [src]="sauce.imgUrl" alt="image of a sauce">
+                  </div>
+                  <div class="header">
+                    <h3>{{sauce.name}}</h3>
+                    <div class="price">
+                      <span>£ {{sauce.price}}</span>
+                    </div>
+                  </div>
+                  <div class="description">
+                    <p>{{sauce.description}}</p>
+                  </div>
+                  <div class="add-to-order">
+                    <button mat-raised-button>
+                      Add To Order
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         <section>
           <div class="section-title">
             <h3>Deserts</h3>
-            <div class="menu-items"></div>
+            <div class="menu-items">
+              <div class="single-item" *ngFor="let desert of this.menu.deserts">
+                <div class="card">
+                  <div class="photo">
+                    <img [src]="desert.imgUrl" alt="image of a desert">
+                  </div>
+                  <div class="header">
+                    <h3>{{desert.name}}</h3>
+                    <div class="price">
+                      <span>£ {{desert.price}}</span>
+                    </div>
+                  </div>
+                  <div class="description">
+                    <p>{{desert.description}}</p>
+                  </div>
+                  <div class="add-to-order">
+                    <button mat-raised-button>
+                      Add To Order
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         <section>
           <div class="section-title">
             <h3>Drinks</h3>
-            <div class="menu-items"></div>
+            <div class="menu-items">
+              <div class="single-item" *ngFor="let drink of this.menu.drinks">
+                <div class="card">
+                  <div class="photo">
+                    <img [src]="drink.imgUrl" alt="image of a drink">
+                  </div>
+                  <div class="header">
+                    <h3>{{drink.name}}</h3>
+                    <div class="price">
+                      <span>£ {{drink.price}}</span>
+                    </div>
+                  </div>
+                  <div class="description">
+                    <p>{{drink.description}}</p>
+                  </div>
+                  <div class="add-to-order">
+                    <button mat-raised-button>
+                      Add To Order
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         <section>
@@ -89,7 +249,7 @@
                   <div class="header">
                     <h3>{{alcohol.name}}</h3>
                     <div class="price">
-                      <span class="currency">£ {{alcohol.price}}</span>
+                      <span >£ {{alcohol.price}}</span>
                     </div>
                   </div>
                   <div class="description">
