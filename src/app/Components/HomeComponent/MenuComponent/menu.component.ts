@@ -25,6 +25,7 @@ export class MenuComponent implements OnInit {
   public getMenuFromApi() {
     this.dataService.getMenu().subscribe(response => {
       if (response.success = true) {
+        this.dataService.loading = false;
         this.menu = response.menu;
         console.log(this.menu);
       }

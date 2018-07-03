@@ -18,6 +18,7 @@ export class DataService {
   User: UserDataModel;
   MenuItem: MenuItemDataModel;
   Order: OrderDataModel;
+  loading: Boolean = true;
 
   constructor(private http: Http) {
     this.User = new UserDataModel();
