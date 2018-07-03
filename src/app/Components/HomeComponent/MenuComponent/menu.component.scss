@@ -5,11 +5,15 @@ $raleway: 'Raleway', sans-serif;
   font-family: $raleway;
 }
 
+.font {
+  font-family: $raleway;
+}
+
 .card {
   display: inline-block;
   background-color: #fff;
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
   .photo {
     height: 140px;
     background-color: #f2f2f2;
@@ -42,5 +46,17 @@ $raleway: 'Raleway', sans-serif;
     p {
       color: #555;
     }
+  }
+  .add-to-order {
+    padding: 10px;
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .remove-from-order {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 }

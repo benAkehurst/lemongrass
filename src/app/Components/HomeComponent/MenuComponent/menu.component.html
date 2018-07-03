@@ -12,7 +12,7 @@
 
               <div class="card">
                 <div class="photo">
-                  <img src="http://cdn.pcwallart.com/images/pepperoni-pizza-little-caesars-wallpaper-1.jpg" alt="Pepperoni"/>
+                  <img src="http://cdn.pcwallart.com/images/pepperoni-pizza-little-caesars-wallpaper-1.jpg" alt="Pepperoni" />
                 </div>
                 <div class="header">
                   <h3>Pepperoni</h3>
@@ -82,8 +82,25 @@
             <h3>Alcohol</h3>
             <div class="menu-items">
               <div class="single-item" *ngFor="let alcohol of this.menu.alcohol">
-                {{alcohol.name}} {{alcohol.price}} {{alcohol.description}}
-                <img [src]="alcohol.imgUrl" alt="image of alcoholic drink">
+                <div class="card">
+                  <div class="photo">
+                    <img [src]="alcohol.imgUrl" alt="image of alcoholic drink">
+                  </div>
+                  <div class="header">
+                    <h3>{{alcohol.name}}</h3>
+                    <div class="price">
+                      <span class="currency">£ {{alcohol.price}}</span>
+                    </div>
+                  </div>
+                  <div class="description">
+                    <p>{{alcohol.description}}</p>
+                  </div>
+                  <div class="add-to-order">
+                    <button mat-raised-button>
+                      Add To Order
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
