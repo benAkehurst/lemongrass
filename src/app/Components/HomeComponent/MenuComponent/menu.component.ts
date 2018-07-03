@@ -37,6 +37,12 @@ export class MenuComponent implements OnInit {
       });
   }
 
+  public scrollTo(id: string): void {
+    const elementList = document.querySelectorAll('#' + id);
+    const element = elementList[0] as HTMLElement;
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+
   public openSwal(Title, text) {
     swal({
       title: Title,
