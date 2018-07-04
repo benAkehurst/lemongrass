@@ -40,7 +40,7 @@
                     <p>{{popular.description}}</p>
                   </div>
                   <div class="add-to-order">
-                    <button mat-raised-button (click)="addItemToMenu(popular)">
+                    <button mat-raised-button (click)="addItemToOrder(popular)">
                       Add To Order
                     </button>
                   </div>
@@ -70,7 +70,7 @@
                     <p>{{starter.description}}</p>
                   </div>
                   <div class="add-to-order">
-                    <button mat-raised-button (click)="addItemToMenu(starter)">
+                    <button mat-raised-button (click)="addItemToOrder(starter)">
                       Add To Order
                     </button>
                   </div>
@@ -102,7 +102,7 @@
                     <p>{{chicken.description}}</p>
                   </div>
                   <div class="add-to-order">
-                    <button mat-raised-button (click)="addItemToMenu(chicken)">
+                    <button mat-raised-button (click)="addItemToOrder(chicken)">
                       Add To Order
                     </button>
                   </div>
@@ -127,7 +127,7 @@
                     <p>{{curry.description}}</p>
                   </div>
                   <div class="add-to-order">
-                    <button mat-raised-button (click)="addItemToMenu(curry)">
+                    <button mat-raised-button (click)="addItemToOrder(curry)">
                       Add To Order
                     </button>
                   </div>
@@ -152,7 +152,7 @@
                     <p>{{noodle.description}}</p>
                   </div>
                   <div class="add-to-order">
-                    <button mat-raised-button (click)="addItemToMenu(noodle)">
+                    <button mat-raised-button (click)="addItemToOrder(noodle)">
                       Add To Order
                     </button>
                   </div>
@@ -177,7 +177,7 @@
                     <p>{{rice.description}}</p>
                   </div>
                   <div class="add-to-order">
-                    <button mat-raised-button (click)="addItemToMenu(rice)">
+                    <button mat-raised-button (click)="addItemToOrder(rice)">
                       Add To Order
                     </button>
                   </div>
@@ -202,7 +202,7 @@
                     <p>{{veg.description}}</p>
                   </div>
                   <div class="add-to-order">
-                    <button mat-raised-button (click)="addItemToMenu(veg)">
+                    <button mat-raised-button (click)="addItemToOrder(veg)">
                       Add To Order
                     </button>
                   </div>
@@ -233,7 +233,7 @@
                     <p>{{side.description}}</p>
                   </div>
                   <div class="add-to-order">
-                    <button mat-raised-button (click)="addItemToMenu(side)">
+                    <button mat-raised-button (click)="addItemToOrder(side)">
                       Add To Order
                     </button>
                   </div>
@@ -263,7 +263,7 @@
                     <p>{{soup.description}}</p>
                   </div>
                   <div class="add-to-order">
-                    <button mat-raised-button (click)="addItemToMenu(soup)">
+                    <button mat-raised-button (click)="addItemToOrder(soup)">
                       Add To Order
                     </button>
                   </div>
@@ -293,7 +293,7 @@
                     <p>{{setMeal.description}}</p>
                   </div>
                   <div class="add-to-order">
-                    <button mat-raised-button (click)="addItemToMenu(setMeal)">
+                    <button mat-raised-button (click)="addItemToOrder(setMeal)">
                       Add To Order
                     </button>
                   </div>
@@ -323,7 +323,7 @@
                     <p>{{sauce.description}}</p>
                   </div>
                   <div class="add-to-order">
-                    <button mat-raised-button (click)="addItemToMenu(sauce)">
+                    <button mat-raised-button (click)="addItemToOrder(sauce)">
                       Add To Order
                     </button>
                   </div>
@@ -353,7 +353,7 @@
                     <p>{{desert.description}}</p>
                   </div>
                   <div class="add-to-order">
-                    <button mat-raised-button (click)="addItemToMenu(desert)">
+                    <button mat-raised-button (click)="addItemToOrder(desert)">
                       Add To Order
                     </button>
                   </div>
@@ -382,7 +382,7 @@
                     <p>{{drink.description}}</p>
                   </div>
                   <div class="add-to-order">
-                    <button mat-raised-button (click)="addItemToMenu(drink)">
+                    <button mat-raised-button (click)="addItemToOrder(drink)">
                       Add To Order
                     </button>
                   </div>
@@ -411,7 +411,7 @@
                     <p>{{alcohol.description}}</p>
                   </div>
                   <div class="add-to-order">
-                    <button mat-raised-button (click)="addItemToMenu(alcohol)">
+                    <button mat-raised-button (click)="addItemToOrder(alcohol)">
                       Add To Order
                     </button>
                   </div>
@@ -427,7 +427,11 @@
         <section>
         <div class="section-title">
           <h3>Current Order</h3>
-          <div class="current-order"></div>
+          <div class="current-order">
+            <div class="item" *ngFor="let item of this.selectedItems">
+              {{item.name}} <button mat-button (click)="removeItemFromOrder(item)">Remove</button>
+            </div>
+          </div>
         </div>
       </section>
       <section>

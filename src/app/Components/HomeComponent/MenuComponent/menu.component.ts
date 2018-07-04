@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../../Services/data.service';
 import { Router } from '@angular/router';
 import swal from 'sweetalert';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-menu',
@@ -42,14 +43,26 @@ export class MenuComponent implements OnInit {
       });
   }
 
-  public addItemToMenu(item: any): void {
-    console.log(item);
-    this.calculateTotal(item.price);
-    console.log(this.totalPrice);
+  public addItemToOrder(item: object) {
+    this.selectedItems.push(item);
+    this.addPrice(item);
   }
 
-  public calculateTotal(price: number) {
-    this.totalPrice = this.totalPrice + price;
+  public addPrice(item: any) {
+    this.totalPrice = this.totalPrice + item.price;
+  }
+
+  public removeItemFromOrder(item: object) {
+    _.remove(this.selectedItems, item);
+    this.removePrice(item);
+  }
+
+  public removePrice(item: any) {
+    if (this.totalPrice === 0) {
+      this.totalPrice = 0;
+    } else {
+      this.totalPrice = this.totalPrice - item.price;
+    }
   }
 
   public scrollTo(id: string): void {
