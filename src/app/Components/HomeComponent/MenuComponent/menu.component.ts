@@ -23,6 +23,7 @@ export class MenuComponent implements OnInit {
   menu: any;
   selectedItems: Array<any> = [];
   totalPrice: any = 0;
+  currentDate: number = Date.now();
 
   ngOnInit() {
     this.getMenuFromApi();
