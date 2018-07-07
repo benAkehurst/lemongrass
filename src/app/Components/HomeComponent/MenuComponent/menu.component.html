@@ -61,7 +61,7 @@
                   </div>
                   <div class="header">
                     <h3>{{starter.name}}</h3>
-                    <i class="fas fa-leaf" *ngIf="starter.vegetarian"></i>
+                    <i class="fas fa-leaf" [ngClass]="{'show-veg': starter.vegetarian}"></i>
                     <div class="price">
                       <span>£ {{starter.price}}</span>
                     </div>

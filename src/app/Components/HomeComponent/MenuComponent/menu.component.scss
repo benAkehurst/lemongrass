@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
-$raleway: 'Raleway', sans-serif;
+$raleway: 'Raleway',
+sans-serif;
 $color1: rgba(124, 193, 88, 1);
-
 .menu-items-container {
   font-family: $raleway;
 }
@@ -63,7 +63,18 @@ $color1: rgba(124, 193, 88, 1);
 }
 
 .fa-leaf {
+  opacity: 0;
   color: $color1;
+}
+
+.show-veg {
+  opacity: 1;
+}
+
+.single-item {
+  max-width: 300px;
+  display: inline;
+  margin: 0 5px 0 5px;
 }
 
 .fixed {
@@ -167,7 +178,7 @@ table {
 
 input[type=button] {
   background-color: #00874C;
-  outlie: none;
+  outline: none;
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 5px;
