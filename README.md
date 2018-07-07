@@ -35,14 +35,12 @@ Run `npm run build` to build the project. The build artifacts will be stored in 
 
 # Lemongrass
 
-One Paragraph of project description goes here
+Lemongrass is a mockup for a fictional Thai resturant. The site allows a user to make an order from a dynamic menu, and the user can then save each order in their personal profie.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
 ```
-Give examples
+Nodejs & NPM
 ```
 
 ### Installing
@@ -85,4 +83,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * [Menu Card](https://codepen.io/lucasalmeida/pen/vKXeLG)
+* [Receipt Design](https://codepen.io/MariamMassadeh/pen/LrAvn)
 * [Jumbotron Image](https://www.pexels.com/photo/scenic-view-of-the-mountains-733092/)
