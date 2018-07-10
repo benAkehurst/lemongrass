@@ -14,7 +14,7 @@ import { NgModel } from '@angular/forms';
 })
 export class HeaderComponent implements OnInit {
 
-    constructor(private dataService: DataService, private router: Router) { }
+    constructor(public dataService: DataService, private router: Router) { }
     loggedIn: Boolean = false;
     name: String;
 
@@ -44,7 +44,6 @@ export class HeaderComponent implements OnInit {
 
     public logout() {
         this.clearUser();
-        this.router.navigate(['/login']);
     }
 
     public goToLoginLink() {
@@ -53,6 +52,10 @@ export class HeaderComponent implements OnInit {
 
     public goToRegisterLink() {
         this.router.navigate(['/register']);
+    }
+
+    public goToAccountLink() {
+      this.router.navigate(['/account']);
     }
 
     public clearUser() {

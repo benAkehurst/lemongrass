@@ -1,23 +1,27 @@
 <!-- <mat-toolbar color="primary">
-  <span>Application Title</span>
-
-  <span class="example-fill-remaining-space"></span>
-
-  <span>Right Aligned Text</span>
-</mat-toolbar> -->
-
-
-<mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span>
-      <!-- <img src="./assets/logo.png"> -->
+    <span (click)="goToHomeLink()">
       Lemongrass
     </span>
     <span class="example-fill-remaining-space"></span>
     <span class="align-center"></span>
     <span class="example-spacer"></span>
 
-    <button mat-button>Menu</button>
-    <button mat-button>Account</button>
+    <button mat-button (click)="goToHomeLink()">Menu</button>
+    <button mat-button (click)="goToAccountLink()">Account</button>
+    <button mat-button (click)="logout()">Logout</button>
+    <button mat-button (click)="goToLoginLink()">Login</button>
+    <button mat-button (click)="goToRegisterLink()">Register</button>
   </mat-toolbar-row>
-</mat-toolbar>
+</mat-toolbar> -->
+
+<header>
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+    <h5 class="my-0 mr-md-auto font-weight-normal">Lemograss</h5>
+    <div class="my-2 my-md-0 mr-md-3">
+      <a class="p-2 text-dark" (click)="goToHomeLink()">Menu</a>
+      <a class="p-2 text-dark" (click)="goToLoginLink()">Login</a>
+      <a class="p-2 text-dark" (click)="goToRegisterLink()">Register</a>
+    </div>
+  </div>
+</header>
