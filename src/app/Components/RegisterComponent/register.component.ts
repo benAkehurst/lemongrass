@@ -49,6 +49,7 @@ export class RegisterComponent implements OnInit {
         localStorage.setItem('token', this.jwt);
         localStorage.setItem('id', this.id);
         localStorage.setItem('name', this.name);
+        this.dataService.alreadyRegistered = true;
     }
 
     public openSwal(Title, text) {
