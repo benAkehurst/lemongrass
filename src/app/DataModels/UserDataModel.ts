@@ -3,7 +3,10 @@ class UserDataModel {
     name: String = '';
     email: String = '';
     password: String = '';
-    image: String = '';
+    phoneNumber: Number;
+    houseNumber: String;
+    street: String;
+    postCode: String;
 }
 
 export default UserDataModel;
