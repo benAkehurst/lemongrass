@@ -79,16 +79,18 @@ const Order = require('./server/models/orderModel');
  * @param {*} res
  * @param {*} next
  */
-app.post('/registerUser', function (req, res, next) {
+app.post('/register-new-user', function (req, res, next) {
   var data = req.body;
+  var saltRounds = 10;
+  var hash = bcrypt.hashSync(data.password, saltRounds)
   var user = new User({
     email: data.email,
-    password: bcrypt.hashSync(data.password, 10),
+    password: hash,
     name: data.name,
     street: data.street, 
-    house_number: data.house_number,
-    post_code: data.post_code,
-    phone_number: data.phone_number
+    houseNumber: data.houseNumber,
+    postCode: data.postCode,
+    phoneNumber: data.phoneNumber
   });
   user.save(function (err, result) {
     if (err) {
@@ -106,7 +108,7 @@ app.post('/registerUser', function (req, res, next) {
       message: 'User created',
       success: true,
       token: token,
-      obj: result
+      response: result
     });
   });
 });
@@ -132,7 +134,7 @@ app.post('/login', function (req, res, next) {
     if (!user) {
       return res.status(401).json({
         success: false,
-        title: 'Login failed',
+        title: 'Login failed - no user',
         error: {
           message: 'Invalid login credentials'
         }
@@ -141,7 +143,7 @@ app.post('/login', function (req, res, next) {
     if (!bcrypt.compareSync(data.password, user.password)) {
       return res.status(401).json({
         success: false,
-        title: 'Login failed',
+        title: 'Login failed - password match fail',
         error: {
           message: 'Invalid login credentials'
         }

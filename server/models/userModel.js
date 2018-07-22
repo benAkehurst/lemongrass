@@ -25,13 +25,13 @@ var User = new Schema({
     street: {
       type: String
     },
-    house_number: {
+    houseNumber: {
       type: String
     },
-    post_code: {
+    postCode: {
       type: String
     },
-    phone_number: {
+    phoneNumber: {
       type: String
     },
     orders_history: {

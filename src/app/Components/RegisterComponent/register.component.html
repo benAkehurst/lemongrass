@@ -3,16 +3,16 @@
 <div class="login-page">
   <div class="form">
     <form class="login-form">
-      <input type="email" placeholder="email" />
-      <input type="password" placeholder="password" />
-      <input type="text" placeholder="name" />
-      <input type="text" placeholder="phone number" />
-      <input type="text" placeholder="house number" />
-      <input type="text" placeholder="street" />
-      <input type="text" placeholder="post code" />
-      <button>create</button>
+      <input type="email" placeholder="email" autofocus [(ngModel)]="dataService.User.email" [ngModelOptions]="{standalone: true}"/>
+      <input type="password" placeholder="password" required [(ngModel)]="dataService.User.password" [ngModelOptions]="{standalone: true}" />
+      <input type="text" placeholder="name" [(ngModel)]="dataService.User.name" [ngModelOptions]="{standalone: true}"/>
+      <input type="text" placeholder="phone number" [(ngModel)]="dataService.User.phoneNumber" [ngModelOptions]="{standalone: true}"/>
+      <input type="text" placeholder="house number" [(ngModel)]="dataService.User.houseNumber" [ngModelOptions]="{standalone: true}"/>
+      <input type="text" placeholder="street" [(ngModel)]="dataService.User.street" [ngModelOptions]="{standalone: true}"/>
+      <input type="text" placeholder="post code" [(ngModel)]="dataService.User.postCode" [ngModelOptions]="{standalone: true}"/>
+      <button (click)="registerUser()">create</button>
       <p class="message">Already registered?
-        <a href="#">Sign In</a>
+        <a (click)="goToLogin()">Sign In</a>
       </p>
     </form>
   </div>

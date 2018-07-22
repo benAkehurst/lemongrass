@@ -3,6 +3,7 @@ import { DataService } from '../../Services/data.service';
 import { Router } from '@angular/router';
 
 import swal from 'sweetalert';
+import UserDataModel from '../../DataModels/UserDataModel';
 
 @Component({
     selector: 'app-register',
@@ -18,6 +19,7 @@ export class RegisterComponent implements OnInit {
     name: string;
 
     ngOnInit() {
+      this.dataService.User = new UserDataModel();
     }
 
     public registerUser() {

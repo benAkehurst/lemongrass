@@ -33,7 +33,7 @@ export class DataService {
   */
   public registerUser() {
     return this.http
-      .post(this.localUrl + 'registerUser', { data: this.User }, { headers: this.headers })
+      .post(this.localUrl + 'register-new-user', { data: this.User }, { headers: this.headers })
       .map(res => res.json());
   }
 
