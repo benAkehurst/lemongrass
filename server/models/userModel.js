@@ -12,12 +12,10 @@ var Schema = mongoose.Schema,
 
 var User = new Schema({
     email: {
-        type: String,
-        unique: true
+        type: String
     },
     password: {
-        type: String,
-        unique: true
+        type: String
     },
     name: {
         type: String

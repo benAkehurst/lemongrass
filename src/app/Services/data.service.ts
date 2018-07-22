@@ -20,6 +20,7 @@ export class DataService {
   Order: OrderDataModel;
   loading: Boolean = true;
   alreadyRegistered: Boolean = false;
+  loggedIn: Boolean = false;
 
   constructor(private http: Http) {
     this.User = new UserDataModel();

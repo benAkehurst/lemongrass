@@ -20,11 +20,11 @@ export class HeaderComponent implements OnInit {
 
     ngOnInit() {
 
-        this.checkLoggedInStaus();
+        // this.checkLoggedInStaus();
 
-        setInterval(() => {
-            this.checkLoggedInStaus();
-        }, 10000);
+        // setInterval(() => {
+        //     this.checkLoggedInStaus();
+        // }, 10000);
     }
 
     public checkLoggedInStaus() {
@@ -60,6 +60,7 @@ export class HeaderComponent implements OnInit {
 
     public clearUser() {
         localStorage.clear();
+        this.dataService.loggedIn = false;
     }
 
     public getStorageItems() {
