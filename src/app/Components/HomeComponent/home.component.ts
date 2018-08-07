@@ -14,6 +14,15 @@ export class HomeComponent implements OnInit {
 
 constructor(public dataService: DataService, private router: Router) { }
 errors: any;
+openingHours = [
+  {id: 1, day: 'Monday', hours: 'Closed'},
+  {id: 2, day: 'Tuesday', hours: '11am - 10pm'},
+  {id: 3, day: 'Wednesday', hours: '11am - 10pm'},
+  {id: 4, day: 'Thursday', hours: '11am - 10pm'},
+  { id: 5, day: 'Friday', hours: '11am - 12pm'},
+  { id: 6, day: 'Saturday', hours: '11am - 12pm'},
+  { id: 7, day: 'Sunday', hours: '11am - 11pm'},
+];
 
 ngOnInit() {
 }
@@ -35,6 +44,14 @@ public getStorageItems() {
     };
   }
 }
+
+  public scrollTo(id: string): void {
+    const elementList = document.querySelectorAll('#' + id);
+    const element = elementList[0] as HTMLElement;
+    element.scrollIntoView({
+      behavior: 'smooth'
+    });
+  }
 
 public openSwal(Title, text) {
   swal({
