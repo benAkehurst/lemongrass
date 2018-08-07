@@ -1,6 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../../Services/data.service';
-import { Router } from '@angular/router';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  DataService
+} from '../../../Services/data.service';
+import {
+  Router
+} from '@angular/router';
 import swal from 'sweetalert';
 import * as _ from 'lodash';
 
@@ -44,6 +51,22 @@ export class MenuComponent implements OnInit {
       });
   }
 
+  public placeOrder() {
+    const selectedItemsForOrder = this.selectedItems;
+    this.dataService.saveNewOrder(selectedItemsForOrder).subscribe(response => {
+      if (response.success = true) {
+        this.dataService.loading = false;
+        this.menu = response.menu;
+        console.log(this.menu);
+      }
+    },
+      error => {
+        this.errors = error;
+        console.log(error);
+        this.openSwal('Error', 'Couldnt place the order now');
+      });
+  }
+
   public addItemToOrder(item: object) {
     this.selectedItems.push(item);
     this.addPrice(item);
@@ -69,7 +92,9 @@ export class MenuComponent implements OnInit {
   public scrollTo(id: string): void {
     const elementList = document.querySelectorAll('#' + id);
     const element = elementList[0] as HTMLElement;
-    element.scrollIntoView({ behavior: 'smooth' });
+    element.scrollIntoView({
+      behavior: 'smooth'
+    });
   }
 
   public openSwal(Title, text) {
