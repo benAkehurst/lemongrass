@@ -64,12 +64,12 @@ export class DataService {
       .map(res => res.json());
   }
 
-  public saveNewOrder() {
+  public saveNewOrder(selectedItems) {
     const userId = this.getUserId();
     const dataObj = {
       _id: userId,
       new_order: {
-        'ordered_items': this.Order
+        'ordered_items': selectedItems
       }
     };
     return this.http
