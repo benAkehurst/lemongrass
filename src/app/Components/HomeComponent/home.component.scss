@@ -1,8 +1,25 @@
-.jumbotron {
-  background-image: url('./../../../assets/images/bg-image.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position-y: -108px;
+// Google Fonts
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+// Font Variables
+$roboto-slab: 'Roboto Slab', serif;
+$open-sans: 'Open Sans', sans-serif;
+
+.about-holder {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-us-text {
+  width: 50%;
+  align-self: center;
+}
+
+.about-us-title {
+  font-family: $roboto-slab;
+}
+
+.about-us-description {
+  font-family: $open-sans;
 }
 
 .spinner-container {
