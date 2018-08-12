@@ -1,29 +1,12 @@
-<!-- <mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <span (click)="goToHomeLink()">
-      Lemongrass
-    </span>
-    <span class="example-fill-remaining-space"></span>
-    <span class="align-center"></span>
-    <span class="example-spacer"></span>
-
-    <button mat-button (click)="goToHomeLink()">Menu</button>
-    <button mat-button (click)="goToAccountLink()">Account</button>
-    <button mat-button (click)="logout()">Logout</button>
-    <button mat-button (click)="goToLoginLink()">Login</button>
-    <button mat-button (click)="goToRegisterLink()">Register</button>
-  </mat-toolbar-row>
-</mat-toolbar> -->
-
 <header>
-  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-    <h5 class="my-0 mr-md-auto font-weight-normal cursor">Lemograss</h5>
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom box-shadow">
+    <h5 class="my-0 mr-md-auto font-weight-normal cursor title">Lemograss</h5>
     <div class="my-2 my-md-0 mr-md-3">
-      <a class="p-2 text-dark cursor" (click)="goToHomeLink()">Menu</a>
-      <a class="p-2 text-dark cursor" (click)="goToLoginLink()" *ngIf="!this.dataService.loggedIn">Login</a>
-      <a class="p-2 text-dark cursor" (click)="goToRegisterLink()" *ngIf="!this.dataService.loggedIn">Register</a>
-      <a class="p-2 text-dark cursor" (click)="logout()" *ngIf="this.dataService.loggedIn">Logout</a>
-      <a class="p-2 text-dark cursor" (click)="goToAccountLink()" *ngIf="this.dataService.loggedIn">Account</a>
+      <a class="p-2 text-white cursor" (click)="goToHomeLink()">Menu</a>
+      <a class="p-2 text-white cursor" (click)="goToLoginLink()" *ngIf="!this.dataService.loggedIn">Login</a>
+      <a class="p-2 text-white cursor" (click)="goToRegisterLink()" *ngIf="!this.dataService.loggedIn">Register</a>
+      <a class="p-2 text-white cursor" (click)="logout()" *ngIf="this.dataService.loggedIn">Logout</a>
+      <a class="p-2 text-white cursor" (click)="goToAccountLink()" *ngIf="this.dataService.loggedIn">Account</a>
     </div>
   </div>
 </header>

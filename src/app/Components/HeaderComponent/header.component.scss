@@ -1,8 +1,11 @@
-// .example-fill-remaining-space {
-//   /* This fills the remaining space, by using flexbox. 
-//      Every toolbar row uses a flexbox row layout. */
-//   flex: 1 1 auto;
-// }
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+// Font Variables
+$roboto-slab: 'Roboto Slab', serif;
+
+.title {
+  font-family: $roboto-slab;
+  color: #fff;
+}
 
 .example-icon {
   padding: 0 14px;
