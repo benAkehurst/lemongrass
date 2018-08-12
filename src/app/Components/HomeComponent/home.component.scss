@@ -1,9 +1,10 @@
 // Google Fonts
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
 // Font Variables
-$roboto-slab: 'Roboto Slab', serif;
-$open-sans: 'Open Sans', sans-serif;
-
+$roboto-slab: 'Roboto Slab',
+serif;
+$open-sans: 'Open Sans',
+sans-serif;
 .about-holder {
   display: flex;
   flex-direction: column;
@@ -20,6 +21,22 @@ $open-sans: 'Open Sans', sans-serif;
 
 .about-us-description {
   font-family: $open-sans;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+}
+
+.map-open-contianer {
+  align-self: center;
+  width: 85%;
+  display: -webkit-inline-box;
+}
+
+.location-map-continer {
+  width: 50%;
+}
+
+.opening-hours-container {
+  width: 50%;
 }
 
 .spinner-container {

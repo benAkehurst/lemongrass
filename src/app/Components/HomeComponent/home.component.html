@@ -12,15 +12,14 @@
             You can start as soon as the first dish arrives at your table, and the others will follow. Each dish is individually
             cooked to perfection, so please do remember that they will not arrive at the same time.</p>
         </div>
-        <button mat-button (click)="scrollTo('menuContainer')">Order Delivery Online</button>
         <div class="map-open-contianer">
-          <div class="opening-hours-container">
+          <div class="opening-hours-container col-sm-12">
             <h3>Opening Hours</h3>
             <ul *ngFor="let i of this.openingHours">
               <li>{{i.day}} - {{i.hours}}</li>
             </ul>
           </div>
-          <div class="location-map-continer">
+          <div class="location-map-continer col-sm-12">
             <h3>Where are we?</h3>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4695.181491408995!2d-0.14166542575383398!3d51.54172693536455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb899172b60fb4f77!2sLemongrass+Restaurant!5e0!3m2!1sen!2sil!4v1533654600141"
               width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>

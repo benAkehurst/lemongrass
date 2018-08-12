@@ -1,4 +1,7 @@
 <div class="container-fluid">
+  <div class="menu-header">
+    <h1>Menu</h1>
+  </div>
   <div class="row" id="top">
     <div class="col-sm-12	col-md-12	col-lg-12	col-xl-12 all-menu-options">
       <button mat-button (click)="scrollTo('popular')">Popular</button>
@@ -15,9 +18,6 @@
   </div>
   <div class="row">
     <div class="col-sm-8	col-md-8	col-lg-8	col-xl-8 menu-items-container">
-      <div class="menu-header">
-        <h1>Menu</h1>
-      </div>
       <div class="menu-sections">
         <section>
           <div class="section-title">
@@ -443,34 +443,36 @@
             </div>
           </div>
         </section> -->
-          <div class="container">
-            <div class="tab"></div>
-            <div class="receipt">
-              <div class="paper">
-                <div class="title">Your Order</div>
-                <div class="date">Date: {{currentDate | date:'dd-MM-yyyy'}}</div>
-                <table>
-                  <tbody>
-                    <tr *ngFor="let item of this.selectedItems">
-                      <td>{{item.name}}</td>
-                      <td class="right">£{{item.price}}</td>
-                      <td><button mat-button (click)="removeItemFromOrder(item)">Remove</button></td>
-                    </tr>
-                    <tr>
-                      <td>Total Price:</td>
-                      <td>£{{totalPrice}}</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" class="center">
-                        <input type="button" value="Pay Now" (click)="placeOrder()" />
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div>
-              </div>
-        </div>
+        <div class="container">
+          <div class="tab"></div>
+          <div class="receipt">
+            <div class="paper">
+              <div class="title">Your Order</div>
+              <div class="date">Date: {{currentDate | date:'dd-MM-yyyy'}}</div>
+              <table>
+                <tbody>
+                  <tr *ngFor="let item of this.selectedItems">
+                    <td>{{item.name}}</td>
+                    <td class="right">£{{item.price}}</td>
+                    <td>
+                      <button mat-button (click)="removeItemFromOrder(item)">Remove</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Total Price:</td>
+                    <td>£{{totalPrice}}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" class="center">
+                      <input type="button" value="Pay Now" (click)="placeOrder()" />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
