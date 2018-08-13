@@ -13,8 +13,6 @@ const bcrypt = require('bcryptjs');
 const mongooseUniqueValidator = require('mongoose-unique-validator');
 const async = require("async");
 const axios = require("axios");
-const request = require('request');
-const firebaseAdmin = require('firebase-admin');
 const firebase = require("firebase");
 
 //
@@ -29,9 +27,8 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(function (req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.setHeader('Access-Control-Allow-Methods', 'POST, GET, PATCH, DELETE, OPTIONS');
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 app.use(express.static(path.join(__dirname, 'dist')));
@@ -45,7 +42,7 @@ var config = {
 firebase.initializeApp(config);
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DB_CONNECT, function (err) {
+mongoose.connect(process.env.DEV_DB_CONNECT, function (err) {
   if (err) {
     console.log("Error: " + err);
   } else {
@@ -120,15 +117,16 @@ app.post('/register-new-user', function (req, res, next) {
  * @param {*} next
  */
 app.post('/login', function (req, res, next) {
-  var data = req.body;
-  User.findOne({
-    email: data.email
-  }, function (err, user) {
+  var data = req.body.data;
+  User.findOne({ email: data.email }, function (err, user) {
     if (err) {
       return res.status(500).json({
         success: false,
         title: 'An error occurred',
-        error: err
+        error: {
+          message: 'An error occurred - 500',
+          error_msg: err
+        }
       });
     }
     if (!user) {
@@ -145,21 +143,17 @@ app.post('/login', function (req, res, next) {
         success: false,
         title: 'Login failed - password match fail',
         error: {
-          message: 'Invalid login credentials'
+          message: 'Invalid login credentials',
+          error_msg: err
         }
       });
+    } else {
+      res.status(200).json({
+        message: 'Successfully logged in',
+        success: true,
+        obj: user
+      });
     }
-    var token = jwt.sign({
-      user: user
-    }, 'secret', {
-      expiresIn: 7200
-    });
-    res.status(200).json({
-      message: 'Successfully logged in',
-      success: true,
-      token: token,
-      obj: user
-    });
   });
 });
 
