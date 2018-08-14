@@ -57,7 +57,7 @@ export class MenuComponent implements OnInit {
       if (response.success = true) {
         this.dataService.loading = false;
         this.menu = response.menu;
-        console.log(this.menu);
+        this.openSwal('Thanks for ordering', 'Your order has been received successfully');
       }
     },
       error => {
@@ -95,6 +95,14 @@ export class MenuComponent implements OnInit {
     element.scrollIntoView({
       behavior: 'smooth'
     });
+  }
+
+  public goToLogin() {
+    this.router.navigate(['/login']);
+  }
+
+  public goToRegister() {
+    this.router.navigate(['/register']);
   }
 
   public openSwal(Title, text) {

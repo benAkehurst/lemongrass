@@ -6,6 +6,11 @@ $color1: rgba(124, 193, 88, 1);
   font-family: $raleway;
 }
 
+.pointer:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .all-menu-options {
   align-self: center;
 }
