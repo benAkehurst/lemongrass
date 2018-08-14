@@ -15,6 +15,7 @@ import { RegisterComponent } from '../RegisterComponent/register.component';
 import { LoginComponent } from '../LoginComponent/login.component';
 import { HomeComponent } from '../HomeComponent/home.component';
 import { MenuComponent } from '../HomeComponent/MenuComponent/menu.component';
+import { AccountComponent } from '../AccountComponent/account.component';
 import { LoaderComponent } from '../General/LoaderComponent/loader.component';
 
 // Services
@@ -37,6 +38,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     RegisterComponent,
     HomeComponent,
     MenuComponent,
+    AccountComponent,
     LoaderComponent,
     FilterPipe
   ],
