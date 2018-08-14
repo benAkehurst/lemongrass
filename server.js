@@ -217,7 +217,8 @@ app.post("/getUserData", function (req, res) {
  */
 app.post("/saveNewOrder", (req, res) => {
   let newOrder = req.body.data.new_order;
-  User.update({_id: req.body._id}, {
+  let userId = req.body.data._id;
+  User.update({_id: userId}, {
       $push: {
         orders_history: newOrder
       }
