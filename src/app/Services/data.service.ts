@@ -48,12 +48,18 @@ export class DataService {
       .map(res => res.json());
   }
 
+  /**
+   * GETS THE MENU ITEMS FROM THE SERVER
+   */
   public getMenu() {
     return this.http
       .post(this.localUrl + 'getMenuItems', { headers: this.headers })
       .map(res => res.json());
   }
 
+  /**
+   * GETS THE USER DATA FROM THE SERVER
+   */
   public getUserData() {
     const userId = this.getUserId();
     const dataObj = {
@@ -64,12 +70,17 @@ export class DataService {
       .map(res => res.json());
   }
 
+  /**
+   * SAVES A NEW ORDER TO THE USER PROFILE
+   * @param selectedItems THIS IS AN ARRAY OF MENU ITEMS THE USER HAS SELECTED
+   */
   public saveNewOrder(selectedItems) {
     const userId = this.getUserId();
     const dataObj = {
       _id: userId,
       new_order: {
-        'ordered_items': selectedItems
+        'ordered_items': selectedItems,
+        'order_time': new Date()
       }
     };
     return this.http
@@ -77,6 +88,9 @@ export class DataService {
       .map(res => res.json());
   }
 
+  /**
+   * GETS THE USER ID FROM THE LOCAL STORAGE TO BE USED IN REQUESTS TO SERVER
+   */
   public getUserId() {
     const userId = localStorage.getItem('id');
     return userId;
