@@ -15,11 +15,30 @@ import { NgModel } from '@angular/forms';
 export class AccountComponent implements OnInit {
 
   constructor(public dataService: DataService, private router: Router) { }
+  errors: any;
   loggedIn: Boolean = false;
   name: String;
+  userData: any;
 
   ngOnInit() {
     this.checkLoggedInStaus();
+    this.getUserData();
+  }
+
+  public getUserData() {
+    this.dataService.loading = true;
+    this.dataService.getUserData().subscribe(response => {
+      if (response.success = true) {
+        console.log(response);
+        this.dataService.loading = false;
+        this.userData = response;
+      }
+    },
+      error => {
+        this.errors = error;
+        console.log(error);
+        this.openSwal('Error', 'Couldnt get user data, sorry :(');
+      });
   }
 
   public checkLoggedInStaus() {
@@ -56,5 +75,11 @@ export class AccountComponent implements OnInit {
     }
   }
 
+  public openSwal(Title, text) {
+    swal({
+      title: Title,
+      text: text,
+    });
+  }
 
 }
