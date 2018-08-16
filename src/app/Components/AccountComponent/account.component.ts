@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { NgModel } from '@angular/forms';
+import * as _ from 'lodash';
 
 
 @Component({
@@ -14,11 +15,17 @@ import { NgModel } from '@angular/forms';
 })
 export class AccountComponent implements OnInit {
 
-  constructor(public dataService: DataService, private router: Router) { }
+  constructor(public dataService: DataService, private router: Router) {
+    if (!this.userData) {
+      this.userData = {};
+    }
+  }
   errors: any;
   loggedIn: Boolean = false;
   name: String;
   userData: any;
+  totalOrdersNumber: Number;
+  totalOrdersValue: Number = 0;
 
   ngOnInit() {
     this.checkLoggedInStaus();
@@ -31,7 +38,9 @@ export class AccountComponent implements OnInit {
       if (response.success = true) {
         console.log(response);
         this.dataService.loading = false;
-        this.userData = response;
+        this.userData = response.data;
+        this.runCalculationFunctions();
+
       }
     },
       error => {
@@ -39,6 +48,22 @@ export class AccountComponent implements OnInit {
         console.log(error);
         this.openSwal('Error', 'Couldnt get user data, sorry :(');
       });
+  }
+
+  public runCalculationFunctions() {
+    this.calculateTotalOrdersNumber();
+    this.calculateTotalOrderValue();
+  }
+
+  public calculateTotalOrdersNumber() {
+    this.totalOrdersNumber = this.userData.orders_history.length;
+  }
+
+  public calculateTotalOrderValue() {
+    const allOrders = this.userData.orders_history;
+    allOrders.forEach(element => {
+      this.totalOrdersValue = this.totalOrdersValue + element.total_price;
+    });
   }
 
   public checkLoggedInStaus() {

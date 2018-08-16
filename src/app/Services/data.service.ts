@@ -74,12 +74,13 @@ export class DataService {
    * SAVES A NEW ORDER TO THE USER PROFILE
    * @param selectedItems THIS IS AN ARRAY OF MENU ITEMS THE USER HAS SELECTED
    */
-  public saveNewOrder(selectedItems) {
+  public saveNewOrder(selectedItems, totalPrice) {
     const userId = this.getUserId();
     const dataObj = {
       _id: userId,
       new_order: {
         'ordered_items': selectedItems,
+        'total_price': totalPrice,
         'order_time': new Date()
       }
     };

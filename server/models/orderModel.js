@@ -14,7 +14,7 @@ var Order = new Schema({
   items: {
     type: Array
   },
-  value: {
+  total_price: {
     type: Number
   }
 }, {

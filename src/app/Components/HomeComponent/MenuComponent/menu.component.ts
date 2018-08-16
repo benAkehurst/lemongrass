@@ -53,7 +53,8 @@ export class MenuComponent implements OnInit {
 
   public placeOrder() {
     const selectedItemsForOrder = this.selectedItems;
-    this.dataService.saveNewOrder(selectedItemsForOrder).subscribe(response => {
+    const totalPrice = this.totalPrice;
+    this.dataService.saveNewOrder(selectedItemsForOrder, totalPrice).subscribe(response => {
       if (response.success = true) {
         this.dataService.loading = false;
         this.menu = response.menu;
